@@ -88,27 +88,36 @@ const articles: Article[] = [
 ]
 ```
 
-## Deployment
+## Deployment to GitHub Pages
 
-### GitHub Pages
+### Quick Deploy
 
-1. Install `gh-pages`:
+1. **Create a GitHub repository** (if you haven't already)
+   - Go to GitHub and create a new repository named `portfolio` (or your preferred name)
+
+2. **Install deployment package:**
 ```bash
 npm install --save-dev gh-pages
 ```
 
-2. Add to `package.json`:
-```json
-"scripts": {
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
-}
+3. **Push to GitHub:**
+```bash
+git remote add origin https://github.com/YOUR_USERNAME/portfolio.git
+git branch -M main
+git push -u origin main
 ```
 
-3. Deploy:
+4. **Deploy to GitHub Pages:**
 ```bash
 npm run deploy
 ```
+
+5. **Enable GitHub Pages:**
+   - Go to repository Settings → Pages
+   - Source: Branch `gh-pages`, folder `/ (root)`
+   - Your site will be live at: `https://YOUR_USERNAME.github.io/portfolio/`
+
+📖 **See [GITHUB_SETUP.md](./GITHUB_SETUP.md) for detailed step-by-step instructions.**
 
 ### Vercel
 
