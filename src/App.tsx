@@ -58,6 +58,8 @@ function App() {
     
     'PythonAPIExplorer': 'PAD HTTP Tracing Toolkit - Advanced debugging tool for Power Automate Desktop (PAD) HTTP calls. Two complementary approaches: Frida-based inline tracer that hooks WinHTTP/WinINet inside PAD worker processes (auto-rescans for child processes) and records complete request/response bodies with headers to JSON logs, and Mitmproxy-based intercepting proxy with automatic Windows proxy configuration and certificate installation. Captures all outbound HTTP calls from PAD, PowerShell, CMD, and helper processes without TLS interception or manual proxy setup. Perfect for debugging API integrations, analyzing PAD behavior, and reverse-engineering automation workflows.',
     
+    'vba_uipath': 'VBA and UiPath integration project - Bridge between Visual Basic for Applications (VBA) and UiPath automation platform. Contains VBA code module and UiPath workflow (XAML) for seamless communication between Excel/VBA macros and UiPath robots. Enables triggering UiPath processes from VBA, exchanging data between VBA applications and UiPath automations, and orchestrating hybrid automation workflows combining desktop automation with enterprise RPA capabilities.',
+    
     // Note: 'spaghetti' is part of PISim, not a separate project - spaghetti diagrams are a visualization feature
   }
 
