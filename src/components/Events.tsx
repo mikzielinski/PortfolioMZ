@@ -1,4 +1,5 @@
-import { FaCalendarAlt, FaMapMarkerAlt, FaExternalLinkAlt, FaImage } from 'react-icons/fa'
+import { useState } from 'react'
+import { FaCalendarAlt, FaMapMarkerAlt, FaExternalLinkAlt, FaImage, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 import './Events.css'
 
 interface Event {
@@ -11,10 +12,11 @@ interface Event {
   type: 'conference' | 'meetup' | 'workshop' | 'webinar'
   link?: string
   photos?: string[]
-  role: 'speaker' | 'organizer' | 'attendee' | 'lecturer'
+  roles: ('speaker' | 'organizer' | 'attendee' | 'lecturer')[] // Multiple roles allowed
 }
 
 const Events = () => {
+  const [currentIndex, setCurrentIndex] = useState(0)
   // UiPath Community Events - Will be sorted chronologically (most recent first)
   const events: Event[] = [
     {
@@ -25,7 +27,7 @@ const Events = () => {
       location: 'Mixturium, Wrocław, Poland',
       description: 'Hosted and organized this in-person community meetup mixing automation know-how, real stories, and chill vibes. Organized by Proservartner and Subeo with UiPath Community Poland. Presented "Agentic Automation: Common Pitfalls & How to Dodge Them". Perfect spot for UiPath fans, RPA lovers, and shared services pros.',
       type: 'meetup',
-      role: 'organizer',
+      roles: ['organizer', 'speaker'],
       link: 'https://community.uipath.com/events/details/uipath-uipath-community-poland-presents-uipath-lounge-workflow-amp-chill-wroclaw/',
       photos: []
     },
@@ -37,7 +39,7 @@ const Events = () => {
       location: 'Scena Monopolis, Łódź, Poland',
       description: 'UiPath MVP and UiPath Lead at Proservartner. Presented "When Bots Find Zen – How We Structured Automation and Befriended AI" (EN) and "Agentic Use Case - demonstracja praktyczna" with Kamil Miśko. First in-person UiPath Community Day in Poland 2025, focusing on Agentic AI with 169 RSVPs.',
       type: 'conference',
-      role: 'speaker',
+      roles: ['speaker', 'organizer'],
       link: 'https://community.uipath.com/events/details/uipath-uipath-community-poland-presents-uipath-community-day-lodz-devs4devs-conference/',
       photos: []
     },
@@ -49,7 +51,7 @@ const Events = () => {
       location: 'ØRSTED POLSKA, Warsaw, Poland',
       description: 'UiPath MVP and UiPath Lead at Proservartner. Presented "How AI can save lives. A use case powered by UiPath Apps and AI". Second in-person UiPath Community Day in Poland following the success of Krakow gathering, covering latest UiPath Platform developments including Agentic AI. 99 RSVPs.',
       type: 'conference',
-      role: 'speaker',
+      roles: ['speaker', 'organizer'],
       link: 'https://community.uipath.com/events/details/uipath-warsaw-krakow-presents-uipath-community-day-warsaw-devs4devs-conference/',
       photos: []
     },
@@ -61,7 +63,7 @@ const Events = () => {
       location: 'Kraków, Poland',
       description: 'UiPath MVP and UiPath Lead at Proservartner. Participated in the first successful UiPath Community Day in Poland held in Krakow. This event paved the way for subsequent community gatherings across Poland, bringing together automation professionals to share knowledge and best practices.',
       type: 'conference',
-      role: 'speaker',
+      roles: ['speaker', 'organizer'],
       link: 'https://community.uipath.com/events/details/uipath-warsaw-krakow-presents-uipath-community-day-warsaw-devs4devs-conference/',
       photos: []
     },
@@ -73,7 +75,7 @@ const Events = () => {
       location: 'Warsaw School of Economics (SGH), Warsaw, Poland',
       description: 'Lecturer delivering course on Business Process Automation. Teaching students practical approaches to process automation, RPA implementation, and digital transformation strategies.',
       type: 'workshop',
-      role: 'lecturer',
+      roles: ['lecturer'],
       photos: []
     },
     {
@@ -84,7 +86,7 @@ const Events = () => {
       location: 'Warsaw School of Economics (SGH), Warsaw, Poland',
       description: 'Lecturer teaching RPA development from a practical, real-world perspective. Sharing industry insights, best practices, and hands-on experience in UiPath development and automation engineering.',
       type: 'workshop',
-      role: 'lecturer',
+      roles: ['lecturer'],
       photos: []
     },
     {
@@ -95,7 +97,7 @@ const Events = () => {
       location: 'Kozminski University, Warsaw, Poland',
       description: 'Lecturer at Kozminski University teaching RPA, automation, and intelligent process automation. Educating students on cutting-edge automation technologies and business transformation through automation.',
       type: 'workshop',
-      role: 'lecturer',
+      roles: ['lecturer'],
       photos: []
     },
   ]
@@ -116,7 +118,7 @@ const Events = () => {
     return colors[type]
   }
 
-  const getRoleBadge = (role: Event['role']) => {
+  const getRoleBadge = (role: Event['roles'][0]) => {
     const badges = {
       speaker: '🎤 Speaker',
       organizer: '👥 Organizer',
@@ -124,6 +126,18 @@ const Events = () => {
       lecturer: '🎓 Lecturer'
     }
     return badges[role]
+  }
+
+  const nextEvent = () => {
+    setCurrentIndex((prev) => (prev + 1) % sortedEvents.length)
+  }
+
+  const prevEvent = () => {
+    setCurrentIndex((prev) => (prev - 1 + sortedEvents.length) % sortedEvents.length)
+  }
+
+  const goToEvent = (index: number) => {
+    setCurrentIndex(index)
   }
 
   return (
@@ -134,15 +148,28 @@ const Events = () => {
           Speaking engagements, workshops, and community events I've organized or participated in
         </p>
         
-        <div className="events-grid">
-          {sortedEvents.map((event) => (
-            <div key={event.id} className="event-card">
-              <div className="event-header">
-                <div className="event-type-badge" style={{ backgroundColor: getEventTypeColor(event.type) }}>
-                  {event.type.toUpperCase()}
-                </div>
-                <div className="event-role-badge">{getRoleBadge(event.role)}</div>
-              </div>
+        <div className="events-carousel-container">
+          <button className="carousel-button carousel-button-prev" onClick={prevEvent} aria-label="Previous event">
+            <FaChevronLeft />
+          </button>
+          
+          <div className="events-carousel">
+            <div 
+              className="events-carousel-track" 
+              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            >
+              {sortedEvents.map((event) => (
+                <div key={event.id} className="event-card carousel-slide">
+                  <div className="event-header">
+                    <div className="event-type-badge" style={{ backgroundColor: getEventTypeColor(event.type) }}>
+                      {event.type.toUpperCase()}
+                    </div>
+                    <div className="event-roles">
+                      {event.roles.map((role, idx) => (
+                        <div key={idx} className="event-role-badge">{getRoleBadge(role)}</div>
+                      ))}
+                    </div>
+                  </div>
               
               <h3>{event.title}</h3>
               
@@ -182,8 +209,25 @@ const Events = () => {
                   View Event Details <FaExternalLinkAlt />
                 </a>
               )}
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          <button className="carousel-button carousel-button-next" onClick={nextEvent} aria-label="Next event">
+            <FaChevronRight />
+          </button>
+
+          <div className="carousel-indicators">
+            {sortedEvents.map((_, index) => (
+              <button
+                key={index}
+                className={`carousel-indicator ${index === currentIndex ? 'active' : ''}`}
+                onClick={() => goToEvent(index)}
+                aria-label={`Go to event ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
 
         {sortedEvents.filter(e => e.photos && e.photos.length > 0).length === 0 && (
