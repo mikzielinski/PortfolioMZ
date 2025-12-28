@@ -29,7 +29,7 @@ const Activities = () => {
     {
       icon: <FaChalkboardTeacher />,
       title: 'Lecturer & Educator',
-      description: 'Delivering lectures and educational content on automation, process optimization, and digital transformation to professionals and students.',
+      description: 'Teaching RPA and automation at leading universities including SGH (Warsaw School of Economics) and Kozminski University. Delivering courses on Business Process Automation, RPA Development, and practical automation engineering.',
     }
   ]
 

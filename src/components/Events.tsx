@@ -14,45 +14,71 @@ interface Event {
 }
 
 const Events = () => {
-  // Add your events here with links and photos
+  // UiPath Community Events
   const events: Event[] = [
     {
-      id: '1',
-      title: 'UiPath Forward Conference',
-      date: '2025',
-      location: 'Various Locations',
-      description: 'Speaking and organizing sessions on RPA and AI automation trends.',
+      id: 'lodz-2025',
+      title: 'UiPath Community Day Łódź: Devs4Devs Conference',
+      date: 'April 11, 2025',
+      location: 'Scena Monopolis, Łódź, Poland',
+      description: 'UiPath MVP and UiPath Lead at Proservartner. Presented "When Bots Find Zen – How We Structured Automation and Befriended AI" (EN) and "Agentic Use Case - demonstracja praktyczna" with Kamil Miśko. First in-person UiPath Community Day in Poland 2025, focusing on Agentic AI with 169 RSVPs.',
       type: 'conference',
       role: 'speaker',
-      link: 'https://forum.uipath.com/u/mikolaj_zielinski/activity',
-      photos: [
-        // Add photo URLs here when available
-        // '/events/uipath-forward-1.jpg',
-        // '/events/uipath-forward-2.jpg',
-      ]
-    },
-    {
-      id: '2',
-      title: 'Poland UiPath Community Meetup',
-      date: '2024-2025',
-      location: 'Poland',
-      description: 'Organizing and leading community meetups for UiPath professionals in Poland.',
-      type: 'meetup',
-      role: 'organizer',
-      link: 'https://forum.uipath.com/u/mikolaj_zielinski/activity',
+      link: 'https://community.uipath.com/events/details/uipath-uipath-community-poland-presents-uipath-community-day-lodz-devs4devs-conference/',
       photos: []
     },
     {
-      id: '3',
-      title: 'Automation & AI Workshop',
-      date: '2025',
-      location: 'Various Locations',
-      description: 'Conducting workshops on automation best practices and AI integration.',
+      id: 'wroclaw-2025',
+      title: 'UiPath Lounge: Workflow & Chill - Wrocław',
+      date: 'September 12, 2025',
+      location: 'Mixturium, Wrocław, Poland',
+      description: 'Hosted and organized this in-person community meetup mixing automation know-how, real stories, and chill vibes. Organized by Proservartner and Subeo with UiPath Community Poland. Presented "Agentic Automation: Common Pitfalls & How to Dodge Them". Perfect spot for UiPath fans, RPA lovers, and shared services pros.',
+      type: 'meetup',
+      role: 'organizer',
+      link: 'https://community.uipath.com/events/details/uipath-uipath-community-poland-presents-uipath-lounge-workflow-amp-chill-wroclaw/',
+      photos: []
+    },
+    {
+      id: 'warsaw-2024',
+      title: 'UiPath Community Day Warsaw: Devs4Devs Conference',
+      date: 'November 14, 2024',
+      location: 'ØRSTED POLSKA, Warsaw, Poland',
+      description: 'UiPath MVP and UiPath Lead at Proservartner. Presented "How AI can save lives. A use case powered by UiPath Apps and AI". Second in-person UiPath Community Day in Poland following the success of Krakow gathering, covering latest UiPath Platform developments including Agentic AI. 99 RSVPs.',
+      type: 'conference',
+      role: 'speaker',
+      link: 'https://community.uipath.com/events/details/uipath-warsaw-krakow-presents-uipath-community-day-warsaw-devs4devs-conference/',
+      photos: []
+    },
+    {
+      id: 'sgh-business-process',
+      title: 'SGH University - Business Process Automation',
+      date: '2024-2025',
+      location: 'Warsaw School of Economics (SGH), Warsaw, Poland',
+      description: 'Lecturer delivering course on Business Process Automation. Teaching students practical approaches to process automation, RPA implementation, and digital transformation strategies.',
       type: 'workshop',
       role: 'lecturer',
       photos: []
     },
-    // Add more events as needed
+    {
+      id: 'sgh-rpa-developer',
+      title: 'SGH University - RPA Developer: Practice Point of View',
+      date: '2024-2025',
+      location: 'Warsaw School of Economics (SGH), Warsaw, Poland',
+      description: 'Lecturer teaching RPA development from a practical, real-world perspective. Sharing industry insights, best practices, and hands-on experience in UiPath development and automation engineering.',
+      type: 'workshop',
+      role: 'lecturer',
+      photos: []
+    },
+    {
+      id: 'kozminski-university',
+      title: 'Kozminski University - RPA & Automation Lecturer',
+      date: '2024-2025',
+      location: 'Kozminski University, Warsaw, Poland',
+      description: 'Lecturer at Kozminski University teaching RPA, automation, and intelligent process automation. Educating students on cutting-edge automation technologies and business transformation through automation.',
+      type: 'workshop',
+      role: 'lecturer',
+      photos: []
+    },
   ]
 
   const getEventTypeColor = (type: Event['type']) => {
