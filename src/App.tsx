@@ -48,6 +48,8 @@ function App() {
     
     'bebek_python': 'BloodBowl game implementation in Python 3.10 with Tkinter GUI. Features character picker for team builder, player class mechanics, team persistence in JSON format, and movement system with sprite management. Implements proper memory management using dictionaries to prevent garbage collection of UI elements (buttons and pictures). Built in October 2022 as a hobby project combining game mechanics with Python GUI development.',
     
+    'ChromeDisabler': 'Windows utility tool (NuGet package) to automatically close Chrome popup windows. Provides automated solution for disabling unwanted Chrome popups and notifications. Packaged as CloseChromePoPUp with installable .nupkg format for easy deployment. Useful for automation scenarios where Chrome popups interrupt workflows or testing environments.',
+    
     // Note: 'spaghetti' is part of PISim, not a separate project - spaghetti diagrams are a visualization feature
   }
 
