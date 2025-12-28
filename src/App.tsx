@@ -71,8 +71,16 @@ function App() {
               if (repoDescriptions[repo.name]) {
                 return { ...repo, description: repoDescriptions[repo.name] }
               }
-              // For other repos, use GitHub description if available, otherwise keep original
-              // Don't generate generic fallbacks - let GitHub descriptions speak for themselves
+              // For other repos, use GitHub description if available
+              // If GitHub description is missing, create a meaningful description based on repo name and language
+              if (!repo.description || repo.description.trim() === '') {
+                const languagePart = repo.language ? `Built with ${repo.language}` : 'Software project'
+                const namePart = repo.name.replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
+                return { 
+                  ...repo, 
+                  description: `${namePart} - ${languagePart}. Explore the repository for more details.`
+                }
+              }
               return repo
             })
             // Sort: featured repos first, then by updated date
