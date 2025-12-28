@@ -36,55 +36,21 @@ function App() {
   const [repos, setRepos] = useState<GitHubRepo[]>([])
   const [loading, setLoading] = useState(true)
 
-  // Custom descriptions for ALL repositories to make them more appealing
-  // Always override GitHub descriptions with these curated ones
+  // Custom descriptions based on ACTUAL project analysis - only for verified projects
+  // These are meaningful, specific descriptions based on real code and functionality
   const repoDescriptions: { [key: string]: string } = {
-    // Featured Projects
-    'PISim': 'Process Automation & RPA Education Simulator - Full-stack educational platform (FastAPI + React/TypeScript) for simulating business processes, analyzing bottlenecks, KPIs, costs, and automation scenarios. Features event log generation, process visualization (heatmaps, spaghetti diagrams), team simulation, and ROI analysis.',
-    'PortfolioMZ': 'Professional portfolio showcasing AI, RPA, and automation expertise. Built with React, TypeScript, and Vite. Features dynamic GitHub integration, responsive design, and deployment on GitHub Pages.',
-    'janome_embroidery_tool': 'Advanced embroidery design and digitization tool with CLI and GUI interfaces. Converts images to machine-readable embroidery formats (DST, JEF), handles color reduction (k-means), stitch optimization, layer management, and preview generation for embroidery machines.',
-    'spaghetti': 'Code complexity analyzer and visualizer - Interactive tool for understanding legacy codebase structures, dependencies, and complexity patterns. Helps identify technical debt and refactoring opportunities through visual analysis.',
+    // Verified Projects - Based on actual code analysis
+    'PISim': 'Educational platform for business process simulation and RPA training. FastAPI backend with React/TypeScript frontend. Enables students to create process scenarios (like AP Invoice Handling), generate synthetic event logs (4000+ cases), analyze bottlenecks, calculate KPIs, visualize processes with heatmaps and spaghetti diagrams, simulate automation with robots, calculate implementation costs (CapEx/OpEx/Change Request), and perform what-if simulations. Includes RACI matrices, team capacity analysis, and CSV/JSON export. Designed for academic use - students analyze data and calculate ROI themselves.',
     
-    // RPA & Automation
-    'uipath-community': 'UiPath community contributions - Automation patterns, reusable components, best practices, and community resources for RPA developers and automation engineers.',
-    'automation-framework': 'Enterprise-grade automation framework with CI/CD integration, monitoring, error handling, and orchestration capabilities for scalable RPA implementations.',
-    'rpa-tools': 'Collection of RPA utilities, scripts, and tools for UiPath and automation workflows - Helper libraries, monitoring scripts, and productivity tools for automation teams.',
-    'uipath-tools': 'UiPath development utilities and helper libraries - Reusable components, custom activities, and productivity tools for UiPath automation projects.',
-    'rpa-framework': 'Comprehensive RPA framework with standardized patterns, error handling, logging, and configuration management for enterprise automation projects.',
+    'PortfolioMZ': 'Professional portfolio website built with React 18, TypeScript, and Vite. Features dynamic GitHub repository fetching, collapsible About sections (Bio & Technical Expertise), carousel-based Events showcase (conferences, meetups, workshops), responsive design, and deployment on GitHub Pages. Showcases AI/RPA expertise, UiPath MVP recognition, speaking engagements, and educational activities.',
     
-    // Process & Data
-    'process-mining': 'Process mining and analysis tools - Discover, analyze, and optimize business processes using event logs, variant analysis, and performance metrics.',
-    'data-pipeline': 'ETL pipeline for data transformation and integration across multiple systems - Scalable data processing with validation, transformation, and monitoring.',
-    'process-analyzer': 'Business process analysis tool for identifying inefficiencies, bottlenecks, and optimization opportunities in organizational workflows.',
+    'janome_embroidery_tool': 'SVG-to-embroidery conversion tool for JANOME embroidery machines. Python-based with interactive CLI and GUI (Tkinter). Features: k-means color reduction (generates 3 variants: 10/14/18 colors), background removal (rembg), automatic scaling, border generation with offset, stitch type selection (Tatami fill for large areas >100mm², Satin stitch for edges 20-100mm², Run stitch for details <20mm²), exports to DST (Tajima) and JEF (Janome) formats with layer management and preview generation.',
     
-    // Integration & APIs
-    'api-integration': 'RESTful API integration layer with authentication, rate limiting, retry logic, and comprehensive error handling for enterprise integrations.',
-    'integration-layer': 'Enterprise integration platform for connecting disparate systems with standardized APIs, message queuing, and data transformation.',
-    
-    // Development Tools
-    'dev-tools': 'Developer productivity tools and utilities - Scripts, helpers, and automation tools for software development workflows.',
-    'code-generator': 'Code generation tools and templates for accelerating development and ensuring consistency across projects.',
-    'testing-framework': 'Testing framework and utilities for automated testing, test data generation, and quality assurance.',
-    
-    // AI & Machine Learning
-    'ml-tools': 'Machine learning utilities and helper libraries - Data preprocessing, model training, and evaluation tools for ML projects.',
-    'ai-automation': 'AI-powered automation tools combining machine learning with RPA for intelligent process automation and decision-making.',
-    
-    // Documentation & Learning
-    'automation-guides': 'Comprehensive guides and documentation for automation best practices, patterns, and implementation strategies.',
-    'rpa-tutorials': 'Tutorials and educational materials for RPA development, UiPath, and automation engineering.',
-    
-    // Utilities & Scripts
-    'scripts': 'Utility scripts and automation helpers for common development and operational tasks.',
-    'helpers': 'Helper libraries and utilities for common programming tasks and code reuse across projects.',
-    
-    // Common patterns (fallback for variations)
-    'uipath': 'UiPath automation projects and reusable components for RPA development and process automation.',
-    'automation': 'Automation tools and scripts for streamlining workflows and reducing manual tasks.',
+    // Note: 'spaghetti' is part of PISim, not a separate project - spaghetti diagrams are a visualization feature
   }
 
-  // Repositories to highlight (most interesting ones based on complexity and uniqueness)
-  const featuredRepos = ['PISim', 'janome_embroidery_tool', 'PortfolioMZ', 'spaghetti']
+  // Repositories to highlight - verified projects only
+  const featuredRepos = ['PISim', 'janome_embroidery_tool', 'PortfolioMZ']
 
   useEffect(() => {
     // Fetch GitHub repositories
@@ -101,15 +67,13 @@ function App() {
                      (featuredRepos.includes(repo.name) || !repo.fork)
             })
             .map((repo: GitHubRepo) => {
-              // Always use custom description if available, otherwise use GitHub description or fallback
+              // Use custom description if available (verified projects only)
               if (repoDescriptions[repo.name]) {
                 return { ...repo, description: repoDescriptions[repo.name] }
               }
-              // If no custom description, keep original but provide fallback if empty
-              return { 
-                ...repo, 
-                description: repo.description || `Project focusing on ${repo.language || 'software development'} and ${repo.name.toLowerCase().replace(/[-_]/g, ' ')}` 
-              }
+              // For other repos, use GitHub description if available, otherwise keep original
+              // Don't generate generic fallbacks - let GitHub descriptions speak for themselves
+              return repo
             })
             // Sort: featured repos first, then by updated date
             .sort((a: GitHubRepo, b: GitHubRepo) => {
