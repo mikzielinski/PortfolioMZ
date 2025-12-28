@@ -18,6 +18,19 @@ const Hero = () => {
               src="/PortfolioMZ/profile-photo.jpg" 
               alt="Mikołaj Zieliński - AI and Automation Lead"
               className="hero-profile-photo"
+              onError={(e) => {
+                // Fallback if profile-photo.jpg doesn't exist, try common variations
+                const target = e.target as HTMLImageElement;
+                const currentSrc = target.src;
+                if (currentSrc.includes('profile-photo.jpg')) {
+                  target.src = '/PortfolioMZ/profile.jpg';
+                } else if (currentSrc.includes('profile.jpg')) {
+                  target.src = '/PortfolioMZ/photo.jpg';
+                } else {
+                  // If no image found, hide the image wrapper
+                  target.style.display = 'none';
+                }
+              }}
             />
             <div className="hero-image-overlay"></div>
           </div>
