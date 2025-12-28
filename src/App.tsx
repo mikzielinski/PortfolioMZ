@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Hero from './components/Hero'
 import About from './components/About'
 import Skills from './components/Skills'
+import Activities from './components/Activities'
 import Projects from './components/Projects'
 import Articles from './components/Articles'
 import Contact from './components/Contact'
@@ -68,7 +69,7 @@ function App() {
       id: '2',
       title: 'UiPath 2025 → 2026: The Year Automation Started Thinking — and Where It Goes Next',
       date: 'Nov 25, 2025',
-      excerpt: 'By a UiPath MVP (x2) and Proservartner FastTrack Partner 2024 was the year when Generative AI taught us that machines…',
+      excerpt: 'By a UiPath MVP 2024 & 2025 and Proservartner FastTrack Partner - 2024 was the year when Generative AI taught us that machines…',
       url: 'https://www.linkedin.com/in/mikzielinski/recent-activity/articles/',
       imageUrl: '/article-placeholder.jpg'
     },
@@ -88,6 +89,7 @@ function App() {
       <Hero />
       <About />
       <Skills />
+      <Activities />
       <Projects repos={repos} loading={loading} />
       <Articles articles={articles} />
       <Contact />

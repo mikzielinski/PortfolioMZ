@@ -13,7 +13,7 @@ const Hero = () => {
     <section id="hero" className="hero">
       <div className="container">
         <div className="hero-content">
-          <div className="hero-badge">UiPath MVP 2024</div>
+          <div className="hero-badge">UiPath MVP 2024 & 2025</div>
           <h1 className="hero-title">
             Mikołaj Zieliński
           </h1>
