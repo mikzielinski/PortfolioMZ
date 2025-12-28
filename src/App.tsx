@@ -38,20 +38,20 @@ function App() {
 
   // Custom descriptions for repositories to make them more appealing
   const repoDescriptions: { [key: string]: string } = {
-    'PISim': 'Process Intelligence Simulator - Advanced automation testing and simulation platform for complex business processes',
-    'PortfolioMZ': 'Professional portfolio showcasing AI, RPA, and automation expertise with modern React/TypeScript stack',
-    'janome_embroidery_tool': 'Advanced embroidery design tool with pattern generation and digitization capabilities',
-    'spaghetti': 'Code complexity analyzer and visualizer for understanding legacy codebase structures',
-    'uipath-community': 'UiPath community contributions, automation patterns, and reusable components',
-    'automation-framework': 'Enterprise-grade automation framework with CI/CD integration and monitoring',
-    'rpa-tools': 'Collection of RPA utilities, scripts, and tools for UiPath and automation workflows',
-    'process-mining': 'Process mining and analysis tools for discovering and optimizing business processes',
-    'api-integration': 'RESTful API integration layer with authentication, rate limiting, and error handling',
-    'data-pipeline': 'ETL pipeline for data transformation and integration across multiple systems',
+    'PISim': 'Process Automation & RPA Education Simulator - Full-stack educational platform (FastAPI + React/TypeScript) for simulating business processes, analyzing bottlenecks, KPIs, costs, and automation scenarios. Features event log generation, process visualization (heatmaps, spaghetti diagrams), team simulation, and ROI analysis.',
+    'PortfolioMZ': 'Professional portfolio showcasing AI, RPA, and automation expertise. Built with React, TypeScript, and Vite. Features dynamic GitHub integration, responsive design, and deployment on GitHub Pages.',
+    'janome_embroidery_tool': 'Advanced embroidery design and digitization tool with CLI and GUI interfaces. Converts images to machine-readable embroidery formats (DST, JEF), handles color reduction, stitch optimization, layer management, and preview generation for embroidery machines.',
+    'spaghetti': 'Code complexity analyzer and visualizer - Interactive tool for understanding legacy codebase structures, dependencies, and complexity patterns. Helps identify technical debt and refactoring opportunities through visual analysis.',
+    'uipath-community': 'UiPath community contributions - Automation patterns, reusable components, best practices, and community resources for RPA developers and automation engineers.',
+    'automation-framework': 'Enterprise-grade automation framework with CI/CD integration, monitoring, error handling, and orchestration capabilities for scalable RPA implementations.',
+    'rpa-tools': 'Collection of RPA utilities, scripts, and tools for UiPath and automation workflows - Helper libraries, monitoring scripts, and productivity tools for automation teams.',
+    'process-mining': 'Process mining and analysis tools - Discover, analyze, and optimize business processes using event logs, variant analysis, and performance metrics.',
+    'api-integration': 'RESTful API integration layer with authentication, rate limiting, retry logic, and comprehensive error handling for enterprise integrations.',
+    'data-pipeline': 'ETL pipeline for data transformation and integration across multiple systems - Scalable data processing with validation, transformation, and monitoring.',
   }
 
-  // Repositories to highlight (most interesting ones)
-  const featuredRepos = ['PISim', 'PortfolioMZ', 'janome_embroidery_tool', 'spaghetti', 'uipath-community', 'automation-framework']
+  // Repositories to highlight (most interesting ones based on complexity and uniqueness)
+  const featuredRepos = ['PISim', 'janome_embroidery_tool', 'PortfolioMZ', 'spaghetti']
 
   useEffect(() => {
     // Fetch GitHub repositories
