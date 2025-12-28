@@ -1,4 +1,5 @@
-import { FaGithub, FaStar, FaCode } from 'react-icons/fa'
+import { useState } from 'react'
+import { FaGithub, FaStar, FaCode, FaChevronDown, FaChevronUp } from 'react-icons/fa'
 import './Projects.css'
 
 interface GitHubRepo {
@@ -19,6 +20,44 @@ interface ProjectsProps {
 }
 
 const Projects = ({ repos, loading }: ProjectsProps) => {
+  const [expandedRepos, setExpandedRepos] = useState<Set<number>>(new Set())
+
+  const toggleRepo = (repoId: number) => {
+    setExpandedRepos(prev => {
+      const newSet = new Set(prev)
+      if (newSet.has(repoId)) {
+        newSet.delete(repoId)
+      } else {
+        newSet.add(repoId)
+      }
+      return newSet
+    })
+  }
+
+  const truncateDescription = (description: string, maxLength: number = 150): { short: string; full: string; needsTruncation: boolean } => {
+    if (description.length <= maxLength) {
+      return { short: description, full: description, needsTruncation: false }
+    }
+    
+    // Try to truncate at sentence boundary
+    const truncated = description.substring(0, maxLength)
+    const lastPeriod = truncated.lastIndexOf('.')
+    const lastSpace = truncated.lastIndexOf(' ')
+    
+    let cutPoint = maxLength
+    if (lastPeriod > maxLength * 0.7) {
+      cutPoint = lastPeriod + 1
+    } else if (lastSpace > maxLength * 0.7) {
+      cutPoint = lastSpace
+    }
+    
+    return {
+      short: description.substring(0, cutPoint).trim() + (cutPoint < description.length ? '...' : ''),
+      full: description,
+      needsTruncation: cutPoint < description.length
+    }
+  }
+
   const getLanguageColor = (language: string | null) => {
     const colors: { [key: string]: string } = {
       'Python': '#3776ab',
@@ -53,50 +92,75 @@ const Projects = ({ repos, loading }: ProjectsProps) => {
           Explore my open-source projects and contributions on GitHub
         </p>
         <div className="projects-grid">
-          {repos.map((repo) => (
-            <div key={repo.id} className="project-card">
-              <div className="project-header">
-                <h3>{repo.name}</h3>
-                <a 
-                  href={repo.html_url} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  aria-label={`View ${repo.name} on GitHub`}
-                >
-                  <FaGithub />
-                </a>
-              </div>
-              <p className="project-description">
-                {repo.description || 'No description available'}
-              </p>
-              <div className="project-footer">
-                <div className="project-meta">
-                  {repo.language && (
-                    <span className="project-language">
-                      <span 
-                        className="language-dot" 
-                        style={{ backgroundColor: getLanguageColor(repo.language) }}
-                      ></span>
-                      {repo.language}
-                    </span>
-                  )}
-                  {repo.stargazers_count > 0 && (
-                    <span className="project-stars">
-                      <FaStar /> {repo.stargazers_count}
-                    </span>
+          {repos.map((repo) => {
+            const description = repo.description || 'No description available'
+            const isExpanded = expandedRepos.has(repo.id)
+            const { short, full, needsTruncation } = truncateDescription(description)
+            
+            return (
+              <div key={repo.id} className="project-card">
+                <div className="project-header">
+                  <h3>{repo.name}</h3>
+                  <a 
+                    href={repo.html_url} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    aria-label={`View ${repo.name} on GitHub`}
+                  >
+                    <FaGithub />
+                  </a>
+                </div>
+                <div className="project-description-wrapper">
+                  <p className="project-description">
+                    {isExpanded ? full : short}
+                  </p>
+                  {needsTruncation && (
+                    <button 
+                      className="project-read-more"
+                      onClick={() => toggleRepo(repo.id)}
+                      aria-expanded={isExpanded}
+                    >
+                      {isExpanded ? (
+                        <>
+                          <FaChevronUp /> Show less
+                        </>
+                      ) : (
+                        <>
+                          <FaChevronDown /> Read more
+                        </>
+                      )}
+                    </button>
                   )}
                 </div>
-                <a 
-                  href={repo.html_url} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="project-link"
-                >
-                  View Repository <FaCode />
-                </a>
+                <div className="project-footer">
+                  <div className="project-meta">
+                    {repo.language && (
+                      <span className="project-language">
+                        <span 
+                          className="language-dot" 
+                          style={{ backgroundColor: getLanguageColor(repo.language) }}
+                        ></span>
+                        {repo.language}
+                      </span>
+                    )}
+                    {repo.stargazers_count > 0 && (
+                      <span className="project-stars">
+                        <FaStar /> {repo.stargazers_count}
+                      </span>
+                    )}
+                  </div>
+                  <a 
+                    href={repo.html_url} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="project-link"
+                  >
+                    View Repository <FaCode />
+                  </a>
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

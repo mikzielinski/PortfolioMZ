@@ -56,11 +56,39 @@
   color: var(--primary-color);
 }
 
+.project-description-wrapper {
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
 .project-description {
   color: var(--text-secondary);
   line-height: 1.7;
-  margin-bottom: 1.5rem;
-  flex-grow: 1;
+  margin-bottom: 0.5rem;
+}
+
+.project-read-more {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+  font-family: inherit;
+}
+
+.project-read-more:hover {
+  color: var(--primary-color-dark);
+  text-decoration: underline;
+}
+
+.project-read-more svg {
+  font-size: 0.8rem;
 }
 
 .project-footer {
