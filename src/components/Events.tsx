@@ -16,7 +16,8 @@ interface Event {
 }
 
 const Events = () => {
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentConferenceIndex, setCurrentConferenceIndex] = useState(0)
+  const [currentWorkshopIndex, setCurrentWorkshopIndex] = useState(0)
   // UiPath Community Events - Will be sorted chronologically (most recent first)
   const events: Event[] = [
     {
@@ -108,6 +109,10 @@ const Events = () => {
     return b.dateSort.localeCompare(a.dateSort)
   })
 
+  // Separate conferences/meetups from workshops
+  const conferences = sortedEvents.filter(e => e.type === 'conference' || e.type === 'meetup' || e.type === 'webinar')
+  const workshops = sortedEvents.filter(e => e.type === 'workshop')
+
   const getEventTypeColor = (type: Event['type']) => {
     const colors = {
       conference: '#6366f1',
@@ -128,16 +133,128 @@ const Events = () => {
     return badges[role]
   }
 
-  const nextEvent = () => {
-    setCurrentIndex((prev) => (prev + 1) % sortedEvents.length)
+  const nextConference = () => {
+    setCurrentConferenceIndex((prev) => (prev + 1) % conferences.length)
   }
 
-  const prevEvent = () => {
-    setCurrentIndex((prev) => (prev - 1 + sortedEvents.length) % sortedEvents.length)
+  const prevConference = () => {
+    setCurrentConferenceIndex((prev) => (prev - 1 + conferences.length) % conferences.length)
   }
 
-  const goToEvent = (index: number) => {
-    setCurrentIndex(index)
+  const goToConference = (index: number) => {
+    setCurrentConferenceIndex(index)
+  }
+
+  const nextWorkshop = () => {
+    setCurrentWorkshopIndex((prev) => (prev + 1) % workshops.length)
+  }
+
+  const prevWorkshop = () => {
+    setCurrentWorkshopIndex((prev) => (prev - 1 + workshops.length) % workshops.length)
+  }
+
+  const goToWorkshop = (index: number) => {
+    setCurrentWorkshopIndex(index)
+  }
+
+  const renderEventCard = (event: Event) => (
+    <div key={event.id} className="event-card carousel-slide">
+      <div className="event-header">
+        <div className="event-type-badge" style={{ backgroundColor: getEventTypeColor(event.type) }}>
+          {event.type.toUpperCase()}
+        </div>
+        <div className="event-roles">
+          {event.roles.map((role, idx) => (
+            <div key={idx} className="event-role-badge">{getRoleBadge(role)}</div>
+          ))}
+        </div>
+      </div>
+      
+      <h3>{event.title}</h3>
+      
+      <div className="event-meta">
+        <div className="event-meta-item">
+          <FaCalendarAlt /> {event.date}
+        </div>
+        <div className="event-meta-item">
+          <FaMapMarkerAlt /> {event.location}
+        </div>
+      </div>
+      
+      <p className="event-description">{event.description}</p>
+      
+      {event.photos && event.photos.length > 0 && (
+        <div className="event-gallery">
+          <h4>
+            <FaImage /> Gallery ({event.photos.length})
+          </h4>
+          <div className="gallery-grid">
+            {event.photos.map((photo, index) => (
+              <div key={index} className="gallery-item">
+                <img src={photo} alt={`${event.title} - Photo ${index + 1}`} loading="lazy" />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+      
+      {event.link && (
+        <a 
+          href={event.link} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="event-link"
+        >
+          View Event Details <FaExternalLinkAlt />
+        </a>
+      )}
+    </div>
+  )
+
+  const renderCarousel = (
+    events: Event[], 
+    currentIndex: number, 
+    onNext: () => void, 
+    onPrev: () => void, 
+    onGoTo: (index: number) => void,
+    title: string
+  ) => {
+    if (events.length === 0) return null
+
+    return (
+      <div className="events-section">
+        <h3 className="events-subsection-title">{title}</h3>
+        <div className="events-carousel-container">
+          <button className="carousel-button carousel-button-prev" onClick={onPrev} aria-label={`Previous ${title.toLowerCase()}`}>
+            <FaChevronLeft />
+          </button>
+          
+          <div className="events-carousel">
+            <div 
+              className="events-carousel-track" 
+              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            >
+              {events.map(renderEventCard)}
+            </div>
+          </div>
+
+          <button className="carousel-button carousel-button-next" onClick={onNext} aria-label={`Next ${title.toLowerCase()}`}>
+            <FaChevronRight />
+          </button>
+
+          <div className="carousel-indicators">
+            {events.map((_, index) => (
+              <button
+                key={index}
+                className={`carousel-indicator ${index === currentIndex ? 'active' : ''}`}
+                onClick={() => onGoTo(index)}
+                aria-label={`Go to ${title.toLowerCase()} ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    )
   }
 
   return (
@@ -148,89 +265,25 @@ const Events = () => {
           Speaking engagements, workshops, and community events I've organized or participated in
         </p>
         
-        <div className="events-carousel-container">
-          <button className="carousel-button carousel-button-prev" onClick={prevEvent} aria-label="Previous event">
-            <FaChevronLeft />
-          </button>
-          
-          <div className="events-carousel">
-            <div 
-              className="events-carousel-track" 
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-            >
-              {sortedEvents.map((event) => (
-                <div key={event.id} className="event-card carousel-slide">
-                  <div className="event-header">
-                    <div className="event-type-badge" style={{ backgroundColor: getEventTypeColor(event.type) }}>
-                      {event.type.toUpperCase()}
-                    </div>
-                    <div className="event-roles">
-                      {event.roles.map((role, idx) => (
-                        <div key={idx} className="event-role-badge">{getRoleBadge(role)}</div>
-                      ))}
-                    </div>
-                  </div>
-              
-              <h3>{event.title}</h3>
-              
-              <div className="event-meta">
-                <div className="event-meta-item">
-                  <FaCalendarAlt /> {event.date}
-                </div>
-                <div className="event-meta-item">
-                  <FaMapMarkerAlt /> {event.location}
-                </div>
-              </div>
-              
-              <p className="event-description">{event.description}</p>
-              
-              {event.photos && event.photos.length > 0 && (
-                <div className="event-gallery">
-                  <h4>
-                    <FaImage /> Gallery ({event.photos.length})
-                  </h4>
-                  <div className="gallery-grid">
-                    {event.photos.map((photo, index) => (
-                      <div key={index} className="gallery-item">
-                        <img src={photo} alt={`${event.title} - Photo ${index + 1}`} loading="lazy" />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-              
-              {event.link && (
-                <a 
-                  href={event.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="event-link"
-                >
-                  View Event Details <FaExternalLinkAlt />
-                </a>
-              )}
-                </div>
-              ))}
-            </div>
-          </div>
+        {renderCarousel(
+          conferences,
+          currentConferenceIndex,
+          nextConference,
+          prevConference,
+          goToConference,
+          'Conferences & Meetups'
+        )}
 
-          <button className="carousel-button carousel-button-next" onClick={nextEvent} aria-label="Next event">
-            <FaChevronRight />
-          </button>
+        {renderCarousel(
+          workshops,
+          currentWorkshopIndex,
+          nextWorkshop,
+          prevWorkshop,
+          goToWorkshop,
+          'Workshops & Lectures'
+        )}
 
-          <div className="carousel-indicators">
-            {sortedEvents.map((_, index) => (
-              <button
-                key={index}
-                className={`carousel-indicator ${index === currentIndex ? 'active' : ''}`}
-                onClick={() => goToEvent(index)}
-                aria-label={`Go to event ${index + 1}`}
-              />
-            ))}
-          </div>
-        </div>
-
-        {sortedEvents.filter(e => e.photos && e.photos.length > 0).length === 0 && (
+        {(conferences.length === 0 && workshops.length === 0) && (
           <div className="events-note">
             <p>
               <FaImage /> Event galleries coming soon! Photos from conferences and events will be added here.

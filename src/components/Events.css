@@ -2,6 +2,22 @@
   background: var(--bg-secondary);
 }
 
+.events-section {
+  margin-bottom: 4rem;
+}
+
+.events-section:last-child {
+  margin-bottom: 0;
+}
+
+.events-subsection-title {
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 700;
+}
+
 .events-carousel-container {
   position: relative;
   width: 100%;
