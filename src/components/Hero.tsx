@@ -33,10 +33,10 @@ const Hero = () => {
               Mikołaj Zieliński
             </h1>
           <p className="hero-subtitle">
-            System Architect & Automation Engineer
+            Software Architect | RPA & UiPath Expert | Integration & Reliability Specialist
           </p>
           <p className="hero-intro">
-            I design and analyze complex software systems, focusing on reliability, automation, and long-term system behavior.
+            I help organizations build reliable software and automation systems that scale — from architecture to execution.
           </p>
           <p className="hero-description">
             Leading digital transformation through intelligent automation, system architecture, and process optimization.

@@ -8,36 +8,33 @@ interface Skill {
 }
 
 const Skills = () => {
-  const skills: Skill[] = [
+  const skillGroups = [
     {
-      name: 'Robotic Process Automation',
-      icon: <FaRobot />,
-      description: 'Expert in UiPath, workflow automation, and RPA architecture design'
-    },
-    {
-      name: 'Artificial Intelligence',
-      icon: <FaBrain />,
-      description: 'AI integration, machine learning applications, and intelligent automation'
-    },
-    {
-      name: 'Business Transformation',
-      icon: <FaChartLine />,
-      description: 'Strategic planning, process optimization, and digital transformation'
-    },
-    {
-      name: 'Software Development',
+      category: 'System Architecture',
       icon: <FaCode />,
-      description: 'Python, .NET, TypeScript, and full-stack development expertise'
+      skills: [
+        'Scalable & resilient design',
+        'Integration strategy and API-based systems',
+        'Custom platforms built from scratch'
+      ]
     },
     {
-      name: 'Cloud Solutions',
-      icon: <FaCloud />,
-      description: 'Cloud-native architectures and scalable automation deployments'
+      category: 'Automation & Intelligent Systems',
+      icon: <FaRobot />,
+      skills: [
+        'RPA with UiPath (primary stack)',
+        'Agentic automation & AI-assisted workflows',
+        'Orchestration and exception-heavy flows'
+      ]
     },
     {
-      name: 'Data Analytics',
-      icon: <FaDatabase />,
-      description: 'Data analysis, process mining, and KPI measurement'
+      category: 'Reliability & Failure Analysis',
+      icon: <FaChartLine />,
+      skills: [
+        'Failure mode identification & mitigation',
+        'Data integrity, overflow & boundary conditions',
+        'Operational resilience for long-running systems'
+      ]
     }
   ]
 
@@ -45,12 +42,21 @@ const Skills = () => {
     <section id="skills" className="skills">
       <div className="container">
         <h2 className="section-title">Expertise & Skills</h2>
-        <div className="skills-grid">
-          {skills.map((skill, index) => (
-            <div key={index} className="skill-card">
-              <div className="skill-icon">{skill.icon}</div>
-              <h3>{skill.name}</h3>
-              <p>{skill.description}</p>
+        <p className="section-subtitle">
+          Technical capabilities organized by domain
+        </p>
+        <div className="skills-groups">
+          {skillGroups.map((group, index) => (
+            <div key={index} className="skill-group">
+              <div className="skill-group-header">
+                <div className="skill-group-icon">{group.icon}</div>
+                <h3 className="skill-group-title">{group.category}</h3>
+              </div>
+              <ul className="skill-group-list">
+                {group.skills.map((skill, skillIndex) => (
+                  <li key={skillIndex}>{skill}</li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>

@@ -7,8 +7,7 @@ const Contact = () => {
       <div className="container">
         <h2 className="section-title">Let's Connect</h2>
         <p className="section-subtitle">
-          Interested in collaborating or discussing automation opportunities? 
-          Let's start a conversation.
+          Open to: architecture consulting, automation strategy, reliability reviews, speaking engagements, and technical collaboration.
         </p>
         <div className="contact-content">
           <div className="contact-methods">

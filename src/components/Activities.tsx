@@ -19,17 +19,17 @@ const Activities = () => {
     {
       icon: <FaMicrophone />,
       title: 'Conference Speaker',
-      description: 'Regular speaker at automation conferences, sharing insights on RPA, AI integration, and business transformation strategies.',
+      description: 'Regular speaker at automation conferences including UiPath Community Days (Warsaw, Łódź, Krakow) and Devs4Devs events, sharing insights on RPA, AI integration, agentic automation, and business transformation strategies. Topics: "When Bots Find Zen", "Agentic Automation: Common Pitfalls", "How AI can save lives".',
     },
     {
       icon: <FaUsers />,
       title: 'Conference & Meeting Organizer',
-      description: 'Organizing community events, workshops, and meetings that bring together automation professionals to share knowledge and best practices.',
+      description: 'Organizing UiPath community events and meetups across Poland (Warsaw, Łódź, Wrocław, Krakow). Events attract 99-169+ RSVPs, bringing together automation professionals to share knowledge and best practices.',
     },
     {
       icon: <FaChalkboardTeacher />,
       title: 'Lecturer & Educator',
-      description: 'Teaching RPA and automation at leading universities including SGH (Warsaw School of Economics) and Kozminski University. Delivering courses on Business Process Automation, RPA Development, and practical automation engineering.',
+      description: 'Teaching Business Process Automation and RPA Development at SGH (Warsaw School of Economics) and Kozminski University. Audiences up to 200+ students per term. Courses focus on practical automation engineering, real-world use cases, and hands-on implementation.',
     },
     {
       icon: <FaHandsHelping />,

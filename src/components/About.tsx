@@ -15,7 +15,12 @@ const About = () => {
           {/* What I Do Section */}
           <div className="about-section">
             <h3 className="about-section-title">What I Do</h3>
-            <div className="about-content-list">
+            <div className="about-content-text">
+              <p>
+                I help teams design and stabilize complex systems — where reliability matters, assumptions fail, and real-world constraints expose hidden risks. I focus on end-to-end architecture, automation platforms, and long-running integrations that must remain predictable over time.
+              </p>
+            </div>
+            <div className="about-content-list" style={{ marginTop: '1.5rem' }}>
               <ul>
                 <li>Design and review system architectures with a focus on reliability and long-term stability</li>
                 <li>Build and integrate automation platforms using UiPath and custom software components</li>
