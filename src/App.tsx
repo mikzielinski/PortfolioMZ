@@ -50,6 +50,8 @@ function App() {
     
     'ChromeDisabler': 'Windows utility tool (NuGet package) to automatically close Chrome popup windows. Provides automated solution for disabling unwanted Chrome popups and notifications. Packaged as CloseChromePoPUp with installable .nupkg format for easy deployment. Useful for automation scenarios where Chrome popups interrupt workflows or testing environments.',
     
+    'ShPoint-Prod': 'Shatterpoint Online - Full-stack multiplayer game monorepo. Monorepo architecture with client (React/TypeScript), server (Python/FastAPI), and shared packages. Features real-time WebSocket communication, Google OAuth authentication, Redis session management (Upstash), character management system, and comprehensive testing suite. Deployed on Vercel (client) with Docker support. Includes migration guides, security fixes, component update documentation, and testing checklists. Active development with 600+ commits. Live at sh-point-prod-client.vercel.app.',
+    
     // Note: 'spaghetti' is part of PISim, not a separate project - spaghetti diagrams are a visualization feature
   }
 
