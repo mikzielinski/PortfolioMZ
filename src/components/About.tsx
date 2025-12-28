@@ -24,16 +24,20 @@ const About = () => {
                 {bioExpanded ? <FaChevronUp /> : <FaChevronDown />}
               </div>
             </button>
-            <div className={`about-section-content ${bioExpanded ? 'expanded' : 'collapsed'}`}>
-              <div className="about-summary">
-                <p>
-                  I work at the intersection of software engineering, system architecture, and complex problem solving, 
-                  focusing on systems where reliability, scalability, and correctness are critical.
-                </p>
-                {!bioExpanded && (
+            <div 
+              className={`about-section-content ${bioExpanded ? 'expanded' : 'collapsed'}`}
+              onClick={!bioExpanded ? () => setBioExpanded(true) : undefined}
+              style={{ cursor: !bioExpanded ? 'pointer' : 'default' }}
+            >
+              {!bioExpanded && (
+                <div className="about-summary">
+                  <p>
+                    I work at the intersection of software engineering, system architecture, and complex problem solving, 
+                    focusing on systems where reliability, scalability, and correctness are critical.
+                  </p>
                   <span className="read-more-hint">Click to read more ↓</span>
-                )}
-              </div>
+                </div>
+              )}
               <div className="about-full-content">
                 <p>
                   I work at the intersection of software engineering, system architecture, and complex problem solving. 
@@ -67,16 +71,20 @@ const About = () => {
                 {technicalExpanded ? <FaChevronUp /> : <FaChevronDown />}
               </div>
             </button>
-            <div className={`about-section-content ${technicalExpanded ? 'expanded' : 'collapsed'}`}>
-              <div className="about-summary">
-                <p>
-                  I specialize in designing, analyzing, and stabilizing complex software systems, with deep experience 
-                  in system architecture, custom software development, intelligent automation, and API-based integrations.
-                </p>
-                {!technicalExpanded && (
+            <div 
+              className={`about-section-content ${technicalExpanded ? 'expanded' : 'collapsed'}`}
+              onClick={!technicalExpanded ? () => setTechnicalExpanded(true) : undefined}
+              style={{ cursor: !technicalExpanded ? 'pointer' : 'default' }}
+            >
+              {!technicalExpanded && (
+                <div className="about-summary">
+                  <p>
+                    I specialize in designing, analyzing, and stabilizing complex software systems, with deep experience 
+                    in system architecture, custom software development, intelligent automation, and API-based integrations.
+                  </p>
                   <span className="read-more-hint">Click to read more ↓</span>
-                )}
-              </div>
+                </div>
+              )}
               <div className="about-full-content">
               <p>
                 I specialize in designing, analyzing, and stabilizing complex software systems, with a strong focus on 
