@@ -56,6 +56,8 @@ function App() {
     
     'PDFEditor': 'Python-based PDF style editor for modifying formatting and styles in PDF documents. Enables programmatic editing of PDF styles, fonts, colors, and layout properties. Built with Python PDF manipulation libraries for batch processing and automation of PDF styling tasks. Useful for automating PDF formatting workflows and customizing document appearance programmatically.',
     
+    'PythonAPIExplorer': 'PAD HTTP Tracing Toolkit - Advanced debugging tool for Power Automate Desktop (PAD) HTTP calls. Two complementary approaches: Frida-based inline tracer that hooks WinHTTP/WinINet inside PAD worker processes (auto-rescans for child processes) and records complete request/response bodies with headers to JSON logs, and Mitmproxy-based intercepting proxy with automatic Windows proxy configuration and certificate installation. Captures all outbound HTTP calls from PAD, PowerShell, CMD, and helper processes without TLS interception or manual proxy setup. Perfect for debugging API integrations, analyzing PAD behavior, and reverse-engineering automation workflows.',
+    
     // Note: 'spaghetti' is part of PISim, not a separate project - spaghetti diagrams are a visualization feature
   }
 
