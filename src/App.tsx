@@ -46,6 +46,8 @@ function App() {
     
     'janome_embroidery_tool': 'SVG-to-embroidery conversion tool for JANOME embroidery machines. Python-based with interactive CLI and GUI (Tkinter). Features: k-means color reduction (generates 3 variants: 10/14/18 colors), background removal (rembg), automatic scaling, border generation with offset, stitch type selection (Tatami fill for large areas >100mm², Satin stitch for edges 20-100mm², Run stitch for details <20mm²), exports to DST (Tajima) and JEF (Janome) formats with layer management and preview generation.',
     
+    'bebek_python': 'BloodBowl game implementation in Python 3.10 with Tkinter GUI. Features character picker for team builder, player class mechanics, team persistence in JSON format, and movement system with sprite management. Implements proper memory management using dictionaries to prevent garbage collection of UI elements (buttons and pictures). Built in October 2022 as a hobby project combining game mechanics with Python GUI development.',
+    
     // Note: 'spaghetti' is part of PISim, not a separate project - spaghetti diagrams are a visualization feature
   }
 
