@@ -1,4 +1,4 @@
-import { FaChalkboardTeacher, FaUsers, FaMicrophone, FaCertificate } from 'react-icons/fa'
+import { FaChalkboardTeacher, FaUsers, FaMicrophone, FaCertificate, FaHandsHelping, FaPenFancy } from 'react-icons/fa'
 import './Activities.css'
 
 interface Activity {
@@ -30,6 +30,16 @@ const Activities = () => {
       icon: <FaChalkboardTeacher />,
       title: 'Lecturer & Educator',
       description: 'Teaching RPA and automation at leading universities including SGH (Warsaw School of Economics) and Kozminski University. Delivering courses on Business Process Automation, RPA Development, and practical automation engineering.',
+    },
+    {
+      icon: <FaHandsHelping />,
+      title: 'Mentorship & Knowledge Sharing',
+      description: 'Actively mentoring developers and automation engineers through one-on-one guidance, code reviews, and architectural consultations, helping teams improve design quality, scalability, and long-term maintainability.',
+    },
+    {
+      icon: <FaPenFancy />,
+      title: 'Community Content & Thought Leadership',
+      description: 'Creating technical articles, case studies, and educational content focused on real-world automation challenges, system design pitfalls, and practical lessons learned from complex implementations.',
     }
   ]
 
