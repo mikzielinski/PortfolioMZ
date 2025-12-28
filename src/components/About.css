@@ -20,6 +20,10 @@
   margin-bottom: 0;
 }
 
+.about-section-inner {
+  padding: 3rem;
+}
+
 .about-section.collapsible {
   padding: 0;
 }
@@ -35,6 +39,11 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   text-align: left;
+  margin: 0;
+}
+
+.about-section-header .about-section-title {
+  margin-bottom: 0;
 }
 
 .about-section-header:hover {
@@ -49,7 +58,7 @@
 .about-section-title {
   color: var(--primary-color);
   font-size: 1.8rem;
-  margin: 0;
+  margin: 0 0 1.5rem 0;
   font-weight: 700;
   flex: 1;
 }
@@ -90,7 +99,7 @@
 }
 
 .about-summary {
-  padding: 0 3rem 2rem 3rem;
+  padding: 0 3rem 1.5rem 3rem;
   color: var(--text-secondary);
   line-height: 1.8;
   font-size: 1.05rem;
@@ -116,12 +125,13 @@
 }
 
 .about-full-content {
-  padding: 0 3rem 3rem 3rem;
+  padding: 0 3rem 2rem 3rem;
   display: none;
 }
 
 .about-section-content.expanded .about-full-content {
   display: block;
+  padding-bottom: 2rem;
 }
 
 .about-full-content {
@@ -152,9 +162,10 @@
 
 .about-content-list li {
   padding: 0.75rem 0;
-  padding-left: 1.5rem;
+  padding-left: 1.75rem;
   position: relative;
   border-bottom: 1px solid var(--border-color);
+  line-height: 1.7;
 }
 
 .about-content-list li:last-child {
@@ -165,18 +176,25 @@
   content: "→";
   color: var(--primary-color);
   font-weight: bold;
+  font-size: 1.1rem;
   position: absolute;
   left: 0;
+  top: 0.75rem;
 }
 
 .about-content-text {
   color: var(--text-secondary);
   line-height: 1.8;
   font-size: 1.05rem;
+  margin-bottom: 2rem;
 }
 
 .about-content-text p {
   margin: 0;
+}
+
+.about-content-list {
+  margin-top: 0;
 }
 
 .expertise-areas {
@@ -258,8 +276,22 @@
 }
 
 @media (max-width: 768px) {
-  .about-section {
+  .about-section-inner {
     padding: 2rem 1.5rem;
+  }
+
+  .about-section-header {
+    padding: 1.5rem;
+  }
+
+  .about-section-header .about-section-title {
+    font-size: 1.4rem;
+  }
+
+  .about-summary,
+  .about-full-content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .about-details {
@@ -273,5 +305,10 @@
 
   .about-section-title {
     font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-content-text {
+    margin-bottom: 1.5rem;
   }
 }

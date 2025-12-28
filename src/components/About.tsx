@@ -14,19 +14,21 @@ const About = () => {
           
           {/* What I Do Section */}
           <div className="about-section">
-            <h3 className="about-section-title">What I Do</h3>
-            <div className="about-content-text">
-              <p>
-                I help teams design and stabilize complex systems — where reliability matters, assumptions fail, and real-world constraints expose hidden risks. I focus on end-to-end architecture, automation platforms, and long-running integrations that must remain predictable over time.
-              </p>
-            </div>
-            <div className="about-content-list" style={{ marginTop: '1.5rem' }}>
-              <ul>
-                <li>Design and review system architectures with a focus on reliability and long-term stability</li>
-                <li>Build and integrate automation platforms using UiPath and custom software components</li>
-                <li>Analyze system failures, edge cases, and hidden assumptions</li>
-                <li>Help teams understand and fix problems that only appear at scale</li>
-              </ul>
+            <div className="about-section-inner">
+              <h3 className="about-section-title">What I Do</h3>
+              <div className="about-content-text">
+                <p>
+                  I help teams design and stabilize complex systems — where reliability matters, assumptions fail, and real-world constraints expose hidden risks. I focus on end-to-end architecture, automation platforms, and long-running integrations that must remain predictable over time.
+                </p>
+              </div>
+              <div className="about-content-list">
+                <ul>
+                  <li>Design and review system architectures with a focus on reliability and long-term stability</li>
+                  <li>Build and integrate automation platforms using UiPath and custom software components</li>
+                  <li>Analyze system failures, edge cases, and hidden assumptions</li>
+                  <li>Help teams understand and fix problems that only appear at scale</li>
+                </ul>
+              </div>
             </div>
           </div>
 
@@ -68,33 +70,38 @@ const About = () => {
 
           {/* Core Expertise Section */}
           <div className="about-section">
-            <h3 className="about-section-title">Core Expertise</h3>
-            <div className="about-content-list">
-              <ul>
-                <li>System and software architecture</li>
-                <li>Automation and orchestration (UiPath, agent-based systems)</li>
-                <li>Integration design and API-based systems</li>
-                <li>Reliability engineering and failure analysis</li>
-                <li>Data integrity, precision, and boundary conditions</li>
-                <li>Long-running and mission-critical systems</li>
-              </ul>
+            <div className="about-section-inner">
+              <h3 className="about-section-title">Core Expertise</h3>
+              <div className="about-content-list">
+                <ul>
+                  <li>System and software architecture</li>
+                  <li>Automation and orchestration (UiPath, agent-based systems)</li>
+                  <li>Integration design and API-based systems</li>
+                  <li>Reliability engineering and failure analysis</li>
+                  <li>Data integrity, precision, and boundary conditions</li>
+                  <li>Long-running and mission-critical systems</li>
+                </ul>
+              </div>
             </div>
           </div>
 
           {/* What I Work On Section */}
           <div className="about-section">
-            <h3 className="about-section-title">What I Work On</h3>
-            <div className="about-content-text">
-              <p>
-                I work on systems where correctness matters: automation platforms, enterprise integrations, and long-running processes where small errors can have outsized impact.
-              </p>
+            <div className="about-section-inner">
+              <h3 className="about-section-title">What I Work On</h3>
+              <div className="about-content-text">
+                <p>
+                  I work on systems where correctness matters: automation platforms, enterprise integrations, and long-running processes where small errors can have outsized impact.
+                </p>
+              </div>
             </div>
           </div>
 
           {/* Credentials & Achievements */}
           <div className="about-section">
-            <h3 className="about-section-title">Credentials & Achievements</h3>
-            <div className="about-details">
+            <div className="about-section-inner">
+              <h3 className="about-section-title">Credentials & Achievements</h3>
+              <div className="about-details">
               <div className="about-item">
                 <h4>UiPath MVP 2024 & 2025</h4>
                 <p>
@@ -143,6 +150,7 @@ const About = () => {
                   cutting-edge technology and strategic insights.
                 </p>
               </div>
+            </div>
             </div>
           </div>
         </div>
