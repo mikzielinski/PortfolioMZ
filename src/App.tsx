@@ -54,6 +54,8 @@ function App() {
     
     'ESP32_Elvevator': 'ESP32 IoT weight monitoring system with HX711 load cell amplifier and WiFi dashboard. Real-time weight readings from load cell sensors with web-based dashboard accessible from any device on WiFi network. Features WebSocket for live data streaming, live charts for measurement history, tara (zeroing) function, mobile-friendly interface, and calibration system. Built with ESP-IDF framework (C), includes detailed calibration guide, component list, and installation diagrams. Ideal for smart scales, IoT load monitoring, industrial weight control systems, and home automation projects.',
     
+    'PDFEditor': 'Python-based PDF style editor for modifying formatting and styles in PDF documents. Enables programmatic editing of PDF styles, fonts, colors, and layout properties. Built with Python PDF manipulation libraries for batch processing and automation of PDF styling tasks. Useful for automating PDF formatting workflows and customizing document appearance programmatically.',
+    
     // Note: 'spaghetti' is part of PISim, not a separate project - spaghetti diagrams are a visualization feature
   }
 
