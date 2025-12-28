@@ -15,21 +15,14 @@ const Hero = () => {
         <div className="hero-content">
           <div className="hero-image-wrapper">
             <img 
-              src="/PortfolioMZ/profile-photo.jpg" 
+              src={`${import.meta.env.BASE_URL}profile-photo.jpg`}
               alt="Mikołaj Zieliński - AI and Automation Lead"
               className="hero-profile-photo"
               onError={(e) => {
-                // Fallback if profile-photo.jpg doesn't exist, try common variations
+                console.error('Failed to load profile photo:', e);
                 const target = e.target as HTMLImageElement;
-                const currentSrc = target.src;
-                if (currentSrc.includes('profile-photo.jpg')) {
-                  target.src = '/PortfolioMZ/profile.jpg';
-                } else if (currentSrc.includes('profile.jpg')) {
-                  target.src = '/PortfolioMZ/photo.jpg';
-                } else {
-                  // If no image found, hide the image wrapper
-                  target.style.display = 'none';
-                }
+                // Try absolute path as fallback
+                target.src = '/PortfolioMZ/profile-photo.jpg';
               }}
             />
             <div className="hero-image-overlay"></div>
