@@ -1,6 +1,11 @@
+import { useState } from 'react'
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa'
 import './About.css'
 
 const About = () => {
+  const [bioExpanded, setBioExpanded] = useState(false)
+  const [technicalExpanded, setTechnicalExpanded] = useState(false)
+
   return (
     <section id="about" className="about">
       <div className="container">
@@ -8,32 +13,61 @@ const About = () => {
           <h2 className="section-title">About Me</h2>
           
           {/* Bio Section */}
-          <div className="about-section">
-            <h3 className="about-section-title">Bio</h3>
-            <div className="about-bio">
-              <p>
-                I work at the intersection of software engineering, system architecture, and complex problem solving. 
-                My background spans designing, analyzing, and maintaining systems where reliability, scalability, and 
-                correctness are critical. I focus on understanding how systems behave over time — not just when everything 
-                works as expected, but especially when assumptions are tested.
-              </p>
-              <p>
-                I have experience working with distributed systems, automation platforms, and large-scale technical 
-                environments where small design decisions can have significant downstream effects. My approach emphasizes 
-                clarity, robustness, and long-term maintainability rather than short-term optimization.
-              </p>
-              <p>
-                I'm particularly interested in how software systems evolve, how failures emerge from seemingly minor design 
-                choices, and how engineers can build more resilient architectures by understanding those patterns early. 
-                I value thoughtful design, clear reasoning, and pragmatic engineering over complexity for its own sake.
-              </p>
+          <div className="about-section collapsible">
+            <button 
+              className="about-section-header"
+              onClick={() => setBioExpanded(!bioExpanded)}
+              aria-expanded={bioExpanded}
+            >
+              <h3 className="about-section-title">Bio</h3>
+              <div className="collapse-icon">
+                {bioExpanded ? <FaChevronUp /> : <FaChevronDown />}
+              </div>
+            </button>
+            <div className={`about-section-content ${bioExpanded ? 'expanded' : 'collapsed'}`}>
+              <div className="about-summary">
+                I work at the intersection of software engineering, system architecture, and complex problem solving, 
+                focusing on systems where reliability, scalability, and correctness are critical.
+              </div>
+              <div className="about-full-content">
+                <p>
+                  I work at the intersection of software engineering, system architecture, and complex problem solving. 
+                  My background spans designing, analyzing, and maintaining systems where reliability, scalability, and 
+                  correctness are critical. I focus on understanding how systems behave over time — not just when everything 
+                  works as expected, but especially when assumptions are tested.
+                </p>
+                <p>
+                  I have experience working with distributed systems, automation platforms, and large-scale technical 
+                  environments where small design decisions can have significant downstream effects. My approach emphasizes 
+                  clarity, robustness, and long-term maintainability rather than short-term optimization.
+                </p>
+                <p>
+                  I'm particularly interested in how software systems evolve, how failures emerge from seemingly minor design 
+                  choices, and how engineers can build more resilient architectures by understanding those patterns early. 
+                  I value thoughtful design, clear reasoning, and pragmatic engineering over complexity for its own sake.
+                </p>
+              </div>
             </div>
           </div>
 
           {/* Technical Expertise Section */}
-          <div className="about-section">
-            <h3 className="about-section-title">Technical Expertise</h3>
-            <div className="about-technical">
+          <div className="about-section collapsible">
+            <button 
+              className="about-section-header"
+              onClick={() => setTechnicalExpanded(!technicalExpanded)}
+              aria-expanded={technicalExpanded}
+            >
+              <h3 className="about-section-title">Technical Expertise</h3>
+              <div className="collapse-icon">
+                {technicalExpanded ? <FaChevronUp /> : <FaChevronDown />}
+              </div>
+            </button>
+            <div className={`about-section-content ${technicalExpanded ? 'expanded' : 'collapsed'}`}>
+              <div className="about-summary">
+                I specialize in designing, analyzing, and stabilizing complex software systems, with deep experience 
+                in system architecture, custom software development, intelligent automation, and API-based integrations.
+              </div>
+              <div className="about-full-content">
               <p>
                 I specialize in designing, analyzing, and stabilizing complex software systems, with a strong focus on 
                 reliability, correctness, and long-term maintainability. My work spans system architecture, custom software 

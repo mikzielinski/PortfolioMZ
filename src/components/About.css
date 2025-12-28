@@ -9,39 +9,108 @@
 
 .about-section {
   background: white;
-  padding: 3rem;
+  padding: 0;
   border-radius: 12px;
   box-shadow: var(--shadow);
   margin-bottom: 2rem;
+  overflow: hidden;
 }
 
 .about-section:last-child {
   margin-bottom: 0;
 }
 
+.about-section.collapsible {
+  padding: 0;
+}
+
+.about-section-header {
+  width: 100%;
+  background: white;
+  border: none;
+  padding: 2rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: left;
+}
+
+.about-section-header:hover {
+  background: var(--bg-secondary);
+}
+
+.about-section-header:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: -2px;
+}
+
 .about-section-title {
   color: var(--primary-color);
   font-size: 1.8rem;
-  margin-bottom: 2rem;
+  margin: 0;
   font-weight: 700;
-  border-bottom: 3px solid var(--primary-color);
-  padding-bottom: 0.5rem;
+  flex: 1;
 }
 
-.about-bio,
-.about-technical {
+.collapse-icon {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.about-section-content {
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.about-section-content.collapsed {
+  max-height: 150px;
+  opacity: 1;
+}
+
+.about-section-content.expanded {
+  max-height: 5000px;
+  opacity: 1;
+}
+
+.about-summary {
+  padding: 0 3rem 2rem 3rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 1.05rem;
+  font-style: italic;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-section-content.expanded .about-summary {
+  display: none;
+}
+
+.about-full-content {
+  padding: 0 3rem 3rem 3rem;
+  display: none;
+}
+
+.about-section-content.expanded .about-full-content {
+  display: block;
+}
+
+.about-full-content {
   color: var(--text-secondary);
   line-height: 1.8;
   font-size: 1.05rem;
 }
 
-.about-bio p,
-.about-technical p {
+.about-full-content p {
   margin-bottom: 1.5rem;
 }
 
-.about-bio p:last-child,
-.about-technical p:last-child {
+.about-full-content p:last-child {
   margin-bottom: 0;
 }
 
