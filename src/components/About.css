@@ -138,6 +138,47 @@
   margin-bottom: 0;
 }
 
+.about-content-list {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.about-content-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-content-list li {
+  padding: 0.75rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.about-content-list li:last-child {
+  border-bottom: none;
+}
+
+.about-content-list li::before {
+  content: "→";
+  color: var(--primary-color);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.about-content-text {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.about-content-text p {
+  margin: 0;
+}
+
 .expertise-areas {
   margin-top: 2rem;
   padding-top: 2rem;

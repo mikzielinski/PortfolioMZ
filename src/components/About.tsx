@@ -12,14 +12,27 @@ const About = () => {
         <div className="about-content">
           <h2 className="section-title">About Me</h2>
           
-          {/* Bio Section */}
+          {/* What I Do Section */}
+          <div className="about-section">
+            <h3 className="about-section-title">What I Do</h3>
+            <div className="about-content-list">
+              <ul>
+                <li>Design and review system architectures with a focus on reliability and long-term stability</li>
+                <li>Build and integrate automation platforms using UiPath and custom software components</li>
+                <li>Analyze system failures, edge cases, and hidden assumptions</li>
+                <li>Help teams understand and fix problems that only appear at scale</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* How I Work Section */}
           <div className="about-section collapsible">
             <button 
               className="about-section-header"
               onClick={() => setBioExpanded(!bioExpanded)}
               aria-expanded={bioExpanded}
             >
-              <h3 className="about-section-title">Bio</h3>
+              <h3 className="about-section-title">How I Work</h3>
               <div className="collapse-icon">
                 {bioExpanded ? <FaChevronUp /> : <FaChevronDown />}
               </div>
@@ -32,107 +45,44 @@ const About = () => {
               {!bioExpanded && (
                 <div className="about-summary">
                   <p>
-                    I work at the intersection of software engineering, system architecture, and complex problem solving, 
-                    focusing on systems where reliability, scalability, and correctness are critical.
+                    I focus on understanding systems beyond their happy paths, analyzing how they behave under stress and how small design decisions compound into operational risks.
                   </p>
                   <span className="read-more-hint">Click to read more ↓</span>
                 </div>
               )}
               <div className="about-full-content">
                 <p>
-                  I work at the intersection of software engineering, system architecture, and complex problem solving. 
-                  My background spans designing, analyzing, and maintaining systems where reliability, scalability, and 
-                  correctness are critical. I focus on understanding how systems behave over time — not just when everything 
-                  works as expected, but especially when assumptions are tested.
+                  I focus on understanding systems beyond their happy paths. My work often involves analyzing how systems behave under stress, how assumptions break over time, and how small design decisions compound into large operational risks.
                 </p>
                 <p>
-                  I have experience working with distributed systems, automation platforms, and large-scale technical 
-                  environments where small design decisions can have significant downstream effects. My approach emphasizes 
-                  clarity, robustness, and long-term maintainability rather than short-term optimization.
-                </p>
-                <p>
-                  I'm particularly interested in how software systems evolve, how failures emerge from seemingly minor design 
-                  choices, and how engineers can build more resilient architectures by understanding those patterns early. 
-                  I value thoughtful design, clear reasoning, and pragmatic engineering over complexity for its own sake.
+                  I prefer simple, observable, and explainable systems over clever but fragile designs. I value thoughtful design, clear reasoning, and pragmatic engineering over complexity for its own sake.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Technical Expertise Section */}
-          <div className="about-section collapsible">
-            <button 
-              className="about-section-header"
-              onClick={() => setTechnicalExpanded(!technicalExpanded)}
-              aria-expanded={technicalExpanded}
-            >
-              <h3 className="about-section-title">Technical Expertise</h3>
-              <div className="collapse-icon">
-                {technicalExpanded ? <FaChevronUp /> : <FaChevronDown />}
-              </div>
-            </button>
-            <div 
-              className={`about-section-content ${technicalExpanded ? 'expanded' : 'collapsed'}`}
-              onClick={!technicalExpanded ? () => setTechnicalExpanded(true) : undefined}
-              style={{ cursor: !technicalExpanded ? 'pointer' : 'default' }}
-            >
-              {!technicalExpanded && (
-                <div className="about-summary">
-                  <p>
-                    I specialize in designing, analyzing, and stabilizing complex software systems, with deep experience 
-                    in system architecture, custom software development, intelligent automation, and API-based integrations.
-                  </p>
-                  <span className="read-more-hint">Click to read more ↓</span>
-                </div>
-              )}
-              <div className="about-full-content">
+          {/* Core Expertise Section */}
+          <div className="about-section">
+            <h3 className="about-section-title">Core Expertise</h3>
+            <div className="about-content-list">
+              <ul>
+                <li>System and software architecture</li>
+                <li>Automation and orchestration (UiPath, agent-based systems)</li>
+                <li>Integration design and API-based systems</li>
+                <li>Reliability engineering and failure analysis</li>
+                <li>Data integrity, precision, and boundary conditions</li>
+                <li>Long-running and mission-critical systems</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* What I Work On Section */}
+          <div className="about-section">
+            <h3 className="about-section-title">What I Work On</h3>
+            <div className="about-content-text">
               <p>
-                I specialize in designing, analyzing, and stabilizing complex software systems, with a strong focus on 
-                reliability, correctness, and long-term maintainability. My work spans system architecture, custom software 
-                development, and intelligent automation, with an emphasis on building solutions that remain robust under 
-                real-world conditions.
+                I work on systems where correctness matters: automation platforms, enterprise integrations, and long-running processes where small errors can have outsized impact.
               </p>
-              <p>
-                In addition to deep experience with RPA and UiPath, I work extensively as a system and software architect, 
-                designing end-to-end solutions from the ground up. This includes building and integrating distributed systems, 
-                defining clear architectural boundaries, and designing data flows that remain reliable as systems scale. 
-                I frequently work on custom-built platforms where standard solutions are insufficient and architectural 
-                decisions have long-term impact.
-              </p>
-              <p>
-                A core part of my expertise lies in system integration and API-based architectures. I design and implement 
-                integrations between heterogeneous systems, ensuring reliable data exchange, clear contracts, and predictable 
-                behavior across services. This includes REST and event-driven architectures, orchestration layers, and 
-                integrations between enterprise platforms, automation tools, and custom applications.
-              </p>
-              <p>
-                I also specialize in intelligent and agent-based automation, combining rule-based logic, decision engines, 
-                and automation frameworks to build systems that can adapt to changing conditions. This includes designing 
-                resilient automation flows, managing complex dependencies, and ensuring graceful failure handling when 
-                assumptions no longer hold.
-              </p>
-              <p>
-                I am often brought in when systems become difficult to reason about — when failures are intermittent, 
-                behavior is inconsistent, or architectural debt has accumulated. My role is to identify root causes, 
-                simplify complexity, and re-establish control through clear architecture and robust design principles.
-              </p>
-              
-              <div className="expertise-areas">
-                <h4>My areas of expertise include:</h4>
-                <ul>
-                  <li>System and software architecture</li>
-                  <li>Integration design and API-based systems</li>
-                  <li>RPA and intelligent automation (including UiPath)</li>
-                  <li>Failure analysis and resilience engineering</li>
-                  <li>Data integrity, boundary conditions, and numeric correctness</li>
-                  <li>Designing scalable, maintainable, and observable systems</li>
-                </ul>
-                <p className="expertise-closing">
-                  I focus on building systems that remain understandable, dependable, and evolvable — even as they grow 
-                  in complexity and operational demands.
-                </p>
-              </div>
-              </div>
             </div>
           </div>
 

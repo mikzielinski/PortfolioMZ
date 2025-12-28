@@ -33,12 +33,13 @@ const Hero = () => {
               Mikołaj Zieliński
             </h1>
           <p className="hero-subtitle">
-            AI and Automation Lead
+            System Architect & Automation Engineer
+          </p>
+          <p className="hero-intro">
+            I design and analyze complex software systems, focusing on reliability, automation, and long-term system behavior.
           </p>
           <p className="hero-description">
-            Work smart, not hard - just automate. Leading digital transformation initiatives 
-            through intelligent automation, AI integration, and process optimization. 
-            Transforming businesses with cutting-edge technology and strategic insights.
+            Leading digital transformation through intelligent automation, system architecture, and process optimization.
           </p>
           <div className="hero-buttons">
             <button 
