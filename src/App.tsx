@@ -52,6 +52,8 @@ function App() {
     
     'ShPoint-Prod': 'Shatterpoint Online - Full-stack multiplayer game monorepo. Monorepo architecture with client (React/TypeScript), server (Python/FastAPI), and shared packages. Features real-time WebSocket communication, Google OAuth authentication, Redis session management (Upstash), character management system, and comprehensive testing suite. Deployed on Vercel (client) with Docker support. Includes migration guides, security fixes, component update documentation, and testing checklists. Active development with 600+ commits. Live at sh-point-prod-client.vercel.app.',
     
+    'ESP32_Elvevator': 'ESP32 IoT weight monitoring system with HX711 load cell amplifier and WiFi dashboard. Real-time weight readings from load cell sensors with web-based dashboard accessible from any device on WiFi network. Features WebSocket for live data streaming, live charts for measurement history, tara (zeroing) function, mobile-friendly interface, and calibration system. Built with ESP-IDF framework (C), includes detailed calibration guide, component list, and installation diagrams. Ideal for smart scales, IoT load monitoring, industrial weight control systems, and home automation projects.',
+    
     // Note: 'spaghetti' is part of PISim, not a separate project - spaghetti diagrams are a visualization feature
   }
 
