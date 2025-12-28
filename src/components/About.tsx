@@ -26,8 +26,13 @@ const About = () => {
             </button>
             <div className={`about-section-content ${bioExpanded ? 'expanded' : 'collapsed'}`}>
               <div className="about-summary">
-                I work at the intersection of software engineering, system architecture, and complex problem solving, 
-                focusing on systems where reliability, scalability, and correctness are critical.
+                <p>
+                  I work at the intersection of software engineering, system architecture, and complex problem solving, 
+                  focusing on systems where reliability, scalability, and correctness are critical.
+                </p>
+                {!bioExpanded && (
+                  <span className="read-more-hint">Click to read more ↓</span>
+                )}
               </div>
               <div className="about-full-content">
                 <p>
@@ -64,8 +69,13 @@ const About = () => {
             </button>
             <div className={`about-section-content ${technicalExpanded ? 'expanded' : 'collapsed'}`}>
               <div className="about-summary">
-                I specialize in designing, analyzing, and stabilizing complex software systems, with deep experience 
-                in system architecture, custom software development, intelligent automation, and API-based integrations.
+                <p>
+                  I specialize in designing, analyzing, and stabilizing complex software systems, with deep experience 
+                  in system architecture, custom software development, intelligent automation, and API-based integrations.
+                </p>
+                {!technicalExpanded && (
+                  <span className="read-more-hint">Click to read more ↓</span>
+                )}
               </div>
               <div className="about-full-content">
               <p>
@@ -113,6 +123,7 @@ const About = () => {
                   I focus on building systems that remain understandable, dependable, and evolvable — even as they grow 
                   in complexity and operational demands.
                 </p>
+              </div>
               </div>
             </div>
           </div>

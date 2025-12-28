@@ -67,8 +67,13 @@
 }
 
 .about-section-content.collapsed {
-  max-height: 150px;
+  max-height: 200px;
   opacity: 1;
+}
+
+.about-section-content.collapsed .about-summary {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.5rem;
 }
 
 .about-section-content.expanded {
@@ -81,10 +86,21 @@
   color: var(--text-secondary);
   line-height: 1.8;
   font-size: 1.05rem;
+}
+
+.about-summary p {
+  margin: 0 0 1rem 0;
   font-style: italic;
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: 1.5rem;
-  margin-bottom: 1.5rem;
+}
+
+.read-more-hint {
+  display: inline-block;
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  font-style: normal;
 }
 
 .about-section-content.expanded .about-summary {
