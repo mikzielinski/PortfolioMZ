@@ -36,6 +36,23 @@ function App() {
   const [repos, setRepos] = useState<GitHubRepo[]>([])
   const [loading, setLoading] = useState(true)
 
+  // Custom descriptions for repositories to make them more appealing
+  const repoDescriptions: { [key: string]: string } = {
+    'PISim': 'Process Intelligence Simulator - Advanced automation testing and simulation platform for complex business processes',
+    'PortfolioMZ': 'Professional portfolio showcasing AI, RPA, and automation expertise with modern React/TypeScript stack',
+    'janome_embroidery_tool': 'Advanced embroidery design tool with pattern generation and digitization capabilities',
+    'spaghetti': 'Code complexity analyzer and visualizer for understanding legacy codebase structures',
+    'uipath-community': 'UiPath community contributions, automation patterns, and reusable components',
+    'automation-framework': 'Enterprise-grade automation framework with CI/CD integration and monitoring',
+    'rpa-tools': 'Collection of RPA utilities, scripts, and tools for UiPath and automation workflows',
+    'process-mining': 'Process mining and analysis tools for discovering and optimizing business processes',
+    'api-integration': 'RESTful API integration layer with authentication, rate limiting, and error handling',
+    'data-pipeline': 'ETL pipeline for data transformation and integration across multiple systems',
+  }
+
+  // Repositories to highlight (most interesting ones)
+  const featuredRepos = ['PISim', 'PortfolioMZ', 'janome_embroidery_tool', 'spaghetti', 'uipath-community', 'automation-framework']
+
   useEffect(() => {
     // Fetch GitHub repositories
     const fetchRepos = async () => {
@@ -43,8 +60,31 @@ function App() {
         const response = await fetch('https://api.github.com/users/mikzielinski/repos?sort=updated&per_page=100')
         if (response.ok) {
           const data = await response.json()
-          // Filter out forked repositories if needed, or keep them
-          setRepos(data.filter((repo: GitHubRepo) => repo.name !== 'mikzielinski')) // Exclude profile repo
+          // Filter and enhance repositories
+          const filteredRepos = data
+            .filter((repo: GitHubRepo) => {
+              // Exclude profile repo and prioritize featured repos
+              return repo.name !== 'mikzielinski' && 
+                     (featuredRepos.includes(repo.name) || !repo.fork)
+            })
+            .map((repo: GitHubRepo) => {
+              // Enhance with custom description if available
+              if (repoDescriptions[repo.name] && (!repo.description || repo.description.length < 50)) {
+                return { ...repo, description: repoDescriptions[repo.name] }
+              }
+              return repo
+            })
+            // Sort: featured repos first, then by updated date
+            .sort((a: GitHubRepo, b: GitHubRepo) => {
+              const aFeatured = featuredRepos.indexOf(a.name)
+              const bFeatured = featuredRepos.indexOf(b.name)
+              if (aFeatured !== -1 && bFeatured !== -1) return aFeatured - bFeatured
+              if (aFeatured !== -1) return -1
+              if (bFeatured !== -1) return 1
+              return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
+            })
+          
+          setRepos(filteredRepos)
         }
       } catch (error) {
         console.error('Error fetching GitHub repos:', error)

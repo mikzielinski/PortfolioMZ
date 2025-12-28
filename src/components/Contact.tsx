@@ -35,13 +35,13 @@ const Contact = () => {
               <span className="contact-link">linkedin.com/in/mikzielinski</span>
             </a>
             <a 
-              href="mailto:contact@example.com" 
+              href="mailto:mikzielinski@gmail.com" 
               className="contact-card"
             >
               <FaEnvelope className="contact-icon" />
               <h3>Email</h3>
               <p>Send me a message</p>
-              <span className="contact-link">Get in touch</span>
+              <span className="contact-link">mikzielinski@gmail.com</span>
             </a>
           </div>
         </div>
