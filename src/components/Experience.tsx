@@ -33,7 +33,7 @@ const companies: Company[] = [
   {
     id: 'xelto',
     name: 'Xelto Digital',
-    logo: 'xelto-digital.png',
+    logo: 'xelto-digital.webp',
     monogram: 'XD',
     brandColor: '#111827',
     url: 'https://xeltodigital.com/en/',
@@ -56,7 +56,7 @@ const companies: Company[] = [
   {
     id: 'kozminski',
     name: 'Kozminski University',
-    logo: 'kozminski.png',
+    logo: 'kozminski.webp',
     monogram: 'ALK',
     brandColor: '#8b0d32',
     location: 'Warsaw · Hybrid',
@@ -78,7 +78,7 @@ const companies: Company[] = [
   {
     id: 'uipath-community',
     name: 'UiPath Community Poland',
-    logo: 'uipath.png',
+    logo: 'uipath.svg',
     monogram: 'Ui',
     brandColor: '#fa4616',
     url: 'https://community.uipath.com/poland-1/',
@@ -99,7 +99,7 @@ const companies: Company[] = [
   {
     id: 'sgh',
     name: 'SGH Warsaw School of Economics',
-    logo: 'sgh.png',
+    logo: 'sgh.webp',
     monogram: 'SGH',
     brandColor: '#003c7d',
     location: 'Warsaw',
@@ -141,7 +141,7 @@ const companies: Company[] = [
   {
     id: 'bayer',
     name: 'Bayer',
-    logo: 'bayer.png',
+    logo: 'bayer.webp',
     monogram: 'B',
     brandColor: '#10384f',
     location: 'Warsaw',
@@ -163,7 +163,7 @@ const companies: Company[] = [
   {
     id: 'olympus',
     name: 'Olympus Business Services',
-    logo: 'olympus.png',
+    logo: 'olympus.webp',
     monogram: 'OBS',
     brandColor: '#08107b',
     location: 'Wrocław',
@@ -184,7 +184,7 @@ const companies: Company[] = [
   {
     id: 'mahle',
     name: 'MAHLE',
-    logo: 'mahle.png',
+    logo: 'mahle.webp',
     monogram: 'M',
     brandColor: '#00529b',
     location: 'Wrocław',
