@@ -160,3 +160,10 @@
     gap: 1rem;
   }
 }
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}

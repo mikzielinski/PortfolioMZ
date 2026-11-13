@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FaGithub, FaStar, FaCode, FaChevronDown, FaChevronUp } from 'react-icons/fa'
+import { FaGithub, FaStar, FaCode, FaChevronDown, FaChevronUp, FaExternalLinkAlt } from 'react-icons/fa'
 import './Projects.css'
 
 interface GitHubRepo {
@@ -12,6 +12,7 @@ interface GitHubRepo {
   fork: boolean
   created_at: string
   updated_at: string
+  demo?: string
 }
 
 interface ProjectsProps {
@@ -149,14 +150,26 @@ const Projects = ({ repos, loading }: ProjectsProps) => {
                       </span>
                     )}
                   </div>
-                  <a 
-                    href={repo.html_url} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="project-link"
-                  >
-                    View Repository <FaCode />
-                  </a>
+                  <div className="project-links">
+                    {repo.demo && (
+                      <a
+                        href={repo.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-link"
+                      >
+                        Live Demo <FaExternalLinkAlt />
+                      </a>
+                    )}
+                    <a 
+                      href={repo.html_url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="project-link"
+                    >
+                      View Repository <FaCode />
+                    </a>
+                  </div>
                 </div>
               </div>
             )

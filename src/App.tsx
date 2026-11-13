@@ -21,6 +21,7 @@ interface GitHubRepo {
   fork: boolean
   created_at: string
   updated_at: string
+  demo?: string
 }
 
 interface Article {
@@ -46,7 +47,7 @@ const repoDescriptions: { [key: string]: string } = {
 
   'ChromeDisabler': 'Windows utility tool (NuGet package) to automatically close Chrome popup windows. Provides automated solution for disabling unwanted Chrome popups and notifications. Packaged as CloseChromePoPUp with installable .nupkg format for easy deployment. Useful for automation scenarios where Chrome popups interrupt workflows or testing environments.',
 
-  'ShPoint-Prod': 'Shatterpoint Online - Full-stack multiplayer game monorepo. Monorepo architecture with client (React/TypeScript), server (Python/FastAPI), and shared packages. Features real-time WebSocket communication, Google OAuth authentication, Redis session management (Upstash), character management system, and comprehensive testing suite. Deployed on Vercel (client) with Docker support. Includes migration guides, security fixes, component update documentation, and testing checklists. Active development with 600+ commits. Live at sh-point-prod-client.vercel.app.',
+  'ShPoint-Prod': 'Shatterpoint Online - Full-stack multiplayer game monorepo. Monorepo architecture with client (React/TypeScript), server (Python/FastAPI), and shared packages. Features real-time WebSocket communication, Google OAuth authentication, Redis session management (Upstash), character management system, and comprehensive testing suite. Deployed on Vercel (client) with Docker support. Includes migration guides, security fixes, component update documentation, and testing checklists. Active development with 600+ commits.',
 
   'ESP32_Elvevator': 'ESP32 IoT weight monitoring system with HX711 load cell amplifier and WiFi dashboard. Real-time weight readings from load cell sensors with web-based dashboard accessible from any device on WiFi network. Features WebSocket for live data streaming, live charts for measurement history, tara (zeroing) function, mobile-friendly interface, and calibration system. Built with ESP-IDF framework (C), includes detailed calibration guide, component list, and installation diagrams. Ideal for smart scales, IoT load monitoring, industrial weight control systems, and home automation projects.',
 
@@ -64,11 +65,50 @@ const repoDescriptions: { [key: string]: string } = {
 
   'UiPathUnifiedCalculator': 'UiPath licensing planner comparing Flex and Unified Pricing & Licensing. Single-page static app that estimates annual Flex cost (SKUs + AI Units) and Unified cost (platform tier, fixed user/robot SKUs, Platform Unit bundles), evaluates whether migrating pays off, plans yearly Platform Unit demand, and imports a process portfolio from XLSX/CSV to suggest a licence setup. Bilingual PL/EN. Companion to the "Flex to the Future" article.',
 
+    'TrackLoadSim': 'Truck trailer load simulator and optimizer for loose freight. Plans the load layout with 3D packing (floor-only greedy or stacked/layered), visualizes it in 3D with React Three Fiber (centre of mass, per-box inspection), and runs a dynamic safety analysis for braking, cornering and rollover risk. Produces operational loading and driving recommendations, uses GPT to optimize SKU order and packing strategy, can verify stability with a PyBullet physics test, and imports scenarios from Excel/CSV and exports JSON plus a PDF loading map. FastAPI + React/TypeScript.',
+
+  'yololizer': 'Local, cloud-free workbench for computer vision: upload images or video, annotate bounding boxes and polygons, train YOLO models and run inference. Python API in Docker (with optional NVIDIA GPU), a static UI on GitHub Pages that connects to the local API, and one-click GitHub Codespaces setup.',
+
+  'ProjectReviewRepository': 'DMS + SDLC governance platform for software and automation projects. Controlled documentation (PDD, SDD, TSS, test plans, release notes) with a full lifecycle from draft to archive, enforced segregation of duties (an author cannot approve, a reviewer cannot also approve, temporary auditors cannot sign off), immutable approved versions, an evidence vault with SHA-256 hashes, audit logging, and approval gates that block downstream work on a governance-aware Gantt. An AI document factory drafts content from Word templates, but AI output always lands as a draft with an auto-created review task. React SPA + FastAPI + PostgreSQL + MinIO in Docker.',
+
+  'RPGPlayerAAI': 'An AI player that joins a tabletop RPG session and plays like a human at the table. Listens through the microphone (Whisper speech-to-text), classifies each moment as wait / my turn / speak up, and answers out loud in Polish either as the player or in-world as its own character. Long sessions are kept coherent with a rolling context window plus LLM-summarized long-term memory. Text-to-speech via Edge TTS, OpenAI TTS or Kokoro.',
+
+  'webinarTool': 'Browser-based webinar teleprompter: agenda editor with per-chapter timing and speaker notes, Markdown/JSON templates, a live prompter with chapter and overall progress, auto-advance, full-screen recording view and a gaze target that keeps your eyes on the camera. Experimental PPTX/PDF slide mapping. Runs entirely in the browser - nothing is sent to a server. Built for XELTO webinars.',
+
+  'PagentA': 'Website of the Agent Pageant 2026 hackathon, organized by UiPath Poland and UiPath Community Poland with the final at UiPath Fusion Warsaw. Animated, bilingual (PL/EN) information hub with a live countdown, event timeline, competition tasks and participant policies, deployed on GitHub Pages.',
+
   // Note: 'spaghetti' is part of PISim, not a separate project - spaghetti diagrams are a visualization feature
 }
 
 // Repositories to highlight - verified projects only
-const featuredRepos = ['HckFleetInteli', 'PISim', 'glados-r1', 'UiPathUnifiedCalculator', 'FusionHckVote', 'janome_embroidery_tool', 'PortfolioMZ']
+const featuredRepos = [
+  'HckFleetInteli',
+  'TrackLoadSim',
+  'ProjectReviewRepository',
+  'glados-r1',
+  'RPGPlayerAAI',
+  'yololizer',
+  'UiPathUnifiedCalculator',
+  'webinarTool',
+  'ShPoint-Prod',
+]
+
+// Live demos that work without a local backend or a login
+const liveDemos: { [key: string]: string } = {
+  'HckFleetInteli': 'https://mikzielinski.github.io/HckFleetInteli/Demo/',
+  'UiPathUnifiedCalculator': 'https://mikzielinski.github.io/UiPathUnifiedCalculator/',
+  'webinarTool': 'https://mikzielinski.github.io/webinarTool/',
+  'PagentA': 'https://mikzielinski.github.io/PagentA/',
+}
+
+// Repos kept public on GitHub but not shown here: empty placeholders, UiPath
+// template boilerplate, client-specific builds (covered by HckFleetInteli) and
+// private experiments
+const hiddenRepos = [
+  'mikzielinski', 'newSH', 'CzechFusion', 'REF_Perf', 'REF-Disp',
+  'DPDAgent', 'dpdDriverApp', 'dpdFleetManager', 'rpalicense', 'tabyplaygems',
+  'AbsenceTool', 'Enhanced-absence-tool', 'Devs4DevsSite',
+]
 
 function App() {
   const [repos, setRepos] = useState<GitHubRepo[]>([])
@@ -85,9 +125,10 @@ function App() {
           const filteredRepos = data
             .filter((repo: GitHubRepo) => {
               // Exclude profile repo and prioritize featured repos
-              return repo.name !== 'mikzielinski' && 
+              return !hiddenRepos.includes(repo.name) &&
                      (featuredRepos.includes(repo.name) || !repo.fork)
             })
+            .map((repo: GitHubRepo) => ({ ...repo, demo: liveDemos[repo.name] }))
             .map((repo: GitHubRepo) => {
               // Use custom description if available (verified projects only)
               if (repoDescriptions[repo.name]) {
