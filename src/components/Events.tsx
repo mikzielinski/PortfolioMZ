@@ -22,18 +22,6 @@ const Events = () => {
   const events: Event[] = [
     // TODO(2026): confirm roles / talk titles for the 2026 events below
     {
-      id: 'piwo4devs-wroclaw-2026',
-      title: 'Piwo4Devs Wrocław: Wieczór z Automatyzacją',
-      date: 'September 17, 2026',
-      dateSort: '2026-09-17',
-      location: 'Wrocław, Poland',
-      description: 'Evening community meetup for automation developers in Wrocław, organized with UiPath Community Poland.',
-      type: 'meetup',
-      roles: ['organizer'],
-      link: 'https://community.uipath.com/poland-1/',
-      photos: []
-    },
-    {
       id: 'uipath-coding-agents-2026',
       title: 'UiPath for Coding Agents',
       date: 'July 30, 2026',
@@ -79,6 +67,74 @@ const Events = () => {
       type: 'conference',
       roles: ['organizer'],
       link: 'https://community.uipath.com/poland-1/',
+      photos: []
+    },
+    {
+      id: 'przeautomatyzowani-2026',
+      title: 'Prze-Automatyzowani Podcast: When Do You Really Need an AI Agent?',
+      date: 'October 28, 2026',
+      dateSort: '2026-10-28',
+      location: 'Online (video podcast)',
+      description: 'Guest on the Prze-Automatyzowani video podcast, talking with Monika Serafin about when an AI agent is worth deploying and when a classic RPA robot does the job faster, cheaper and without hallucinations. Covered combining existing RPA fleets with AI agents, starting without burning the budget, limiting LLM hallucinations in business processes, and agent teams that verify each other.',
+      type: 'webinar',
+      roles: ['speaker'],
+      photos: []
+    },
+    {
+      id: 'piwo4devs-wroclaw-2026',
+      title: 'Piwo4Devs Wrocław: An Evening of Automation',
+      date: 'September 17, 2026',
+      dateSort: '2026-09-17',
+      location: 'Man Cave, Wrocław, Poland',
+      description: 'Co-organized this UiPath Community Polska evening meetup with XELTO and Subeo, featuring three UiPath MVPs on one stage. Presented "Before You Let an AI Agent into Company Data" on how agentic access changes the data-leak risk model. Other sessions covered IT recruitment from the other side of the table and UiPath Maestro through a sceptic\'s eyes, followed by a networking game and Kahoot.',
+      type: 'meetup',
+      roles: ['organizer', 'speaker'],
+      link: 'https://community.uipath.com/poland-1/',
+      photos: []
+    },
+    {
+      id: 'uipath-agenthack-2026',
+      title: 'UiPath AgentHack: Xelto Fleet Intelligence',
+      date: 'July 2026',
+      dateSort: '2026-07-06',
+      location: 'Online hackathon',
+      description: 'Built and submitted Xelto Fleet Intelligence with Polish UiPath MVPs Kamil Miśko and Piotr Kołakowski and the XELTO team. Two UiPath coded apps on a single data layer (a Driver App for expenses and invoices, a Fleet Manager App for claim review and fleet health), orchestrated by AI agents with RAG, IXP and Data Fabric for fleet expense fraud detection.',
+      type: 'conference',
+      roles: ['attendee'],
+      link: 'https://mikzielinski.github.io/HckFleetInteli/Demo/',
+      photos: []
+    },
+    {
+      id: 'xelto-netsuite-webinar-2026',
+      title: 'XELTO Webinar: AI in NetSuite Without Empty Promises',
+      date: 'July 2026',
+      dateSort: '2026-07-01',
+      location: 'Online',
+      description: 'Speaker at the XELTO webinar on practical AI deployments with Oracle NetSuite. My part: how to start the AI journey in a company — rolling AI out without burning the budget, protecting data when AI agents are involved, and optimizing business process costs.',
+      type: 'webinar',
+      roles: ['speaker'],
+      photos: []
+    },
+    {
+      id: 'mvp-summit-madrid-2026',
+      title: 'UiPath MVP Summit 2026 - Madrid',
+      date: 'June 24, 2026',
+      dateSort: '2026-06-24',
+      location: 'Madrid, Spain',
+      description: 'Attended the annual UiPath MVP Summit in my third year as an MVP, together with almost the entire Polish MVP crew. MVPs from around the world meet the UiPath product teams in person to exchange ideas and feedback that shape how the platform evolves.',
+      type: 'conference',
+      roles: ['attendee'],
+      photos: []
+    },
+    {
+      id: 'fusion-prague-2026',
+      title: 'UiPath Fusion Prague',
+      date: 'June 2026',
+      dateSort: '2026-06-05',
+      location: 'Prague, Czech Republic',
+      description: 'The first UiPath Fusion dedicated to the Czech and Slovak markets. Supported Roel Zwakman in reopening the UiPath Community chapter for the Czech Republic.',
+      type: 'conference',
+      roles: ['attendee'],
       photos: []
     },
     {

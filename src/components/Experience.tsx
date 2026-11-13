@@ -48,7 +48,7 @@ const companies: Company[] = [
           'Designing end-to-end intelligent automation solutions — from process assessment and solution design to delivery and hypercare',
           'Building custom applications that speed up and standardize the automation development lifecycle, incl. AI coding agents in the dev workflow',
           'Architecting agentic automation: AI agents for order intake and claims handling that work alongside RPA robots and hand off to humans where needed',
-          'Developing Task2Mask (formerly AiRelay)', // TODO: one-line product description
+          'Developing Task2Mask (formerly AiRelay) — a security layer between employees and AI models that protects company data before it reaches external AI providers',
           'Combining UiPath and n8n in one automation landscape — choosing the right tool per process and keeping orchestration observable',
           'Automating finance, supply chain and HR processes integrated with ERP systems (incl. JD Edwards and NetSuite)',
           'Shaping governance for AI in automation in line with the EU AI Act and ISO/IEC 42001',
