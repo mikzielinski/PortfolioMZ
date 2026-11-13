@@ -1,11 +1,5 @@
-import { FaRobot, FaBrain, FaChartLine, FaCode, FaCloud, FaDatabase } from 'react-icons/fa'
+import { FaRobot, FaChartLine, FaCode } from 'react-icons/fa'
 import './Skills.css'
-
-interface Skill {
-  name: string
-  icon: JSX.Element
-  description: string
-}
 
 const Skills = () => {
   const skillGroups = [

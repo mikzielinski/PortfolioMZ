@@ -16,7 +16,7 @@ const Hero = () => {
           <div className="hero-image-wrapper">
             <img 
               src={`${import.meta.env.BASE_URL}profile-photo.jpg`}
-              alt="Mikołaj Zieliński - AI and Automation Lead"
+              alt="Mikołaj Zieliński - Automation Solution Architect"
               className="hero-profile-photo"
               onError={(e) => {
                 console.error('Failed to load profile photo:', e);
@@ -33,7 +33,7 @@ const Hero = () => {
               Mikołaj Zieliński
             </h1>
           <p className="hero-subtitle">
-            Software Architect | RPA & UiPath Expert | Integration & Reliability Specialist
+            Automation Solution Architect @ Xelto Digital | UiPath MVP | Speaker & Lecturer
           </p>
           <p className="hero-intro">
             I help organizations build reliable software and automation systems that scale — from architecture to execution.

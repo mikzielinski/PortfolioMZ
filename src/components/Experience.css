@@ -1,0 +1,247 @@
+.experience {
+  background: var(--bg-primary);
+}
+
+.xp-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 auto 3rem;
+}
+
+.xp-filter {
+  border: 1px solid var(--border-color);
+  background: white;
+  color: var(--text-secondary);
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.xp-filter:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.xp-filter.active {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border-color: transparent;
+  color: white;
+}
+
+.xp-timeline {
+  list-style: none;
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: 2.5rem;
+}
+
+.xp-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0.6rem;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color), var(--border-color));
+}
+
+.xp-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.xp-item:last-child {
+  margin-bottom: 0;
+}
+
+.xp-dot {
+  position: absolute;
+  left: -2.35rem;
+  top: 2.1rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid var(--secondary-color);
+}
+
+.xp-item.current .xp-dot {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 6px rgba(99, 102, 241, 0.18);
+}
+
+.xp-card {
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.75rem 2rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.xp-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.xp-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.xp-logo {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  background: white;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  overflow: hidden;
+}
+
+.xp-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.xp-logo-monogram {
+  border: none;
+  color: white;
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+}
+
+.xp-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.xp-company-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.xp-company {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+a.xp-company:hover {
+  color: var(--primary-color);
+}
+
+.xp-kind {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+}
+
+.xp-kind-work { background: #eef2ff; color: var(--primary-dark); }
+.xp-kind-teaching { background: #ecfdf5; color: #047857; }
+.xp-kind-community { background: #fdf2f8; color: #be185d; }
+
+.xp-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.xp-role + .xp-role {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed var(--border-color);
+}
+
+.xp-role-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.xp-role-head h3 {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+}
+
+.xp-period {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.xp-now {
+  background: #dcfce7;
+  color: #15803d;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+}
+
+.xp-role ul {
+  padding-left: 1.2rem;
+  color: var(--text-secondary);
+}
+
+.xp-role li {
+  margin-bottom: 0.35rem;
+}
+
+.xp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.9rem;
+}
+
+.xp-tags span {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 6px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+@media (max-width: 640px) {
+  .xp-timeline { padding-left: 1.75rem; }
+  .xp-dot { left: -1.65rem; }
+  .xp-card { padding: 1.25rem; }
+  .xp-logo { width: 52px; height: 52px; }
+  .xp-company { font-size: 1.1rem; }
+}

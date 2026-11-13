@@ -12,7 +12,7 @@ interface Event {
   type: 'conference' | 'meetup' | 'workshop' | 'webinar'
   link?: string
   photos?: string[]
-  roles: ('speaker' | 'organizer' | 'attendee' | 'lecturer')[] // Multiple roles allowed
+  roles: ('speaker' | 'organizer' | 'attendee' | 'lecturer' | 'mentor')[] // Multiple roles allowed
 }
 
 const Events = () => {
@@ -20,6 +20,67 @@ const Events = () => {
   const [currentWorkshopIndex, setCurrentWorkshopIndex] = useState(0)
   // UiPath Community Events - Will be sorted chronologically (most recent first)
   const events: Event[] = [
+    // TODO(2026): confirm roles / talk titles for the 2026 events below
+    {
+      id: 'piwo4devs-wroclaw-2026',
+      title: 'Piwo4Devs Wrocław: Wieczór z Automatyzacją',
+      date: 'September 17, 2026',
+      dateSort: '2026-09-17',
+      location: 'Wrocław, Poland',
+      description: 'Evening community meetup for automation developers in Wrocław, organized with UiPath Community Poland.',
+      type: 'meetup',
+      roles: ['organizer'],
+      link: 'https://community.uipath.com/poland-1/',
+      photos: []
+    },
+    {
+      id: 'uipath-coding-agents-2026',
+      title: 'UiPath for Coding Agents',
+      date: 'July 30, 2026',
+      dateSort: '2026-07-30',
+      location: 'Virtual (with UiPath Community Berlin)',
+      description: 'Virtual session co-hosted by UiPath Community Poland and Berlin on using UiPath together with AI coding agents.',
+      type: 'webinar',
+      roles: ['organizer'],
+      link: 'https://community.uipath.com/poland-1/',
+      photos: []
+    },
+    {
+      id: 'agenthack-2026',
+      title: 'UiPath AgentHack 2026: Overview and Participation Guide',
+      date: 'June 11, 2026',
+      dateSort: '2026-06-11',
+      location: 'Virtual',
+      description: 'Virtual meetup introducing UiPath AgentHack 2026 — how the hackathon works and how to take part.',
+      type: 'webinar',
+      roles: ['organizer'],
+      link: 'https://community.uipath.com/poland-1/',
+      photos: []
+    },
+    {
+      id: 'agent-pageant-2026',
+      title: 'Agent Pageant – Agentic Automation Hackathon PL',
+      date: 'February 12 – March 19, 2026',
+      dateSort: '2026-03-19',
+      location: 'Poland · finals at UiPath Fusion Warsaw',
+      description: 'Polish agentic automation hackathon run by UiPath Community Poland. Supported participants as UiPath MVP and mentor; finalists presented their agents at UiPath Fusion Warsaw.',
+      type: 'conference',
+      roles: ['mentor'],
+      link: 'https://forum.uipath.com/t/agent-pageant-agentic-automation-hackathon-pl-winners-finalists/5732433',
+      photos: []
+    },
+    {
+      id: 'fusion-warsaw-2026',
+      title: 'UiPath Community at UiPath Fusion Warsaw',
+      date: 'March 19, 2026',
+      dateSort: '2026-03-19',
+      location: 'Warsaw, Poland',
+      description: 'UiPath Community Poland presence at UiPath Fusion Warsaw, including the Agent Pageant hackathon finals.',
+      type: 'conference',
+      roles: ['organizer'],
+      link: 'https://community.uipath.com/poland-1/',
+      photos: []
+    },
     {
       id: 'wroclaw-2025',
       title: 'UiPath Lounge: Workflow & Chill - Wrocław',
@@ -65,7 +126,6 @@ const Events = () => {
       description: 'UiPath MVP and UiPath Lead at Proservartner. Participated in the first successful UiPath Community Day in Poland held in Krakow. This event paved the way for subsequent community gatherings across Poland, bringing together automation professionals to share knowledge and best practices.',
       type: 'conference',
       roles: ['speaker', 'organizer'],
-      link: 'https://community.uipath.com/events/details/uipath-warsaw-krakow-presents-uipath-community-day-warsaw-devs4devs-conference/',
       photos: []
     },
     {
@@ -128,7 +188,8 @@ const Events = () => {
       speaker: '🎤 Speaker',
       organizer: '👥 Organizer',
       attendee: '👤 Attendee',
-      lecturer: '🎓 Lecturer'
+      lecturer: '🎓 Lecturer',
+      mentor: '🧭 Mentor'
     }
     return badges[role]
   }

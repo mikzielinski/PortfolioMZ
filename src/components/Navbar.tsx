@@ -32,6 +32,7 @@ const Navbar = () => {
           
           <ul className={`navbar-links ${mobileMenuOpen ? 'active' : ''}`}>
             <li><a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about') }}>About</a></li>
+            <li><a href="#experience" onClick={(e) => { e.preventDefault(); scrollToSection('experience') }}>Experience</a></li>
             <li><a href="#skills" onClick={(e) => { e.preventDefault(); scrollToSection('skills') }}>Skills</a></li>
             <li><a href="#activities" onClick={(e) => { e.preventDefault(); scrollToSection('activities') }}>Activities</a></li>
             <li><a href="#events" onClick={(e) => { e.preventDefault(); scrollToSection('events') }}>Events</a></li>

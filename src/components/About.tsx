@@ -4,7 +4,6 @@ import './About.css'
 
 const About = () => {
   const [bioExpanded, setBioExpanded] = useState(false)
-  const [technicalExpanded, setTechnicalExpanded] = useState(false)
 
   return (
     <section id="about" className="about">
@@ -135,11 +134,11 @@ const About = () => {
                 </p>
               </div>
               <div className="about-item">
-                <h4>UiPath Lead at Proservartner</h4>
+                <h4>Automation Solution Architect at Xelto Digital</h4>
                 <p>
-                  Leading automation initiatives and teams to deliver transformative solutions that 
-                  streamline operations and enhance business efficiency. Driving digital transformation 
-                  through intelligent automation strategies.
+                  Designing intelligent automation solutions (RPA &amp; AI agents), building custom applications 
+                  that improve the automation development lifecycle, and developing Task2Mask (formerly AiRelay). 
+                  Previously UiPath Lead at Proservartner.
                 </p>
               </div>
               <div className="about-item">
