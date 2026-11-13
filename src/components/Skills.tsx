@@ -1,11 +1,5 @@
-import { FaRobot, FaBrain, FaChartLine, FaCode, FaCloud, FaDatabase } from 'react-icons/fa'
+import { FaRobot, FaChartLine, FaCode, FaShieldAlt } from 'react-icons/fa'
 import './Skills.css'
-
-interface Skill {
-  name: string
-  icon: JSX.Element
-  description: string
-}
 
 const Skills = () => {
   const skillGroups = [
@@ -23,8 +17,17 @@ const Skills = () => {
       icon: <FaRobot />,
       skills: [
         'RPA with UiPath (primary stack)',
-        'Agentic automation & AI-assisted workflows',
-        'Orchestration and exception-heavy flows'
+        'Agentic automation: AI agents, UiPath Maestro, human-in-the-loop',
+        'Document Understanding / IXP, Data Fabric & coded apps'
+      ]
+    },
+    {
+      category: 'AI Governance & Security',
+      icon: <FaShieldAlt />,
+      skills: [
+        'Secure AI adoption: data protection before prompts reach external models',
+        'AI Act & ISO 42001 readiness for automation programs',
+        'Shadow AI visibility, policies & guardrails'
       ]
     },
     {

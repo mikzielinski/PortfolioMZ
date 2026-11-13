@@ -21,6 +21,85 @@ const Events = () => {
   // UiPath Community Events - Will be sorted chronologically (most recent first)
   const events: Event[] = [
     {
+      id: 'przeautomatyzowani-2026',
+      title: 'Prze-Automatyzowani Podcast: When Do You Really Need an AI Agent?',
+      date: 'October 28, 2026',
+      dateSort: '2026-10-28',
+      location: 'Online (video podcast)',
+      description: 'Guest on the Prze-Automatyzowani video podcast, talking with Monika Serafin about when an AI agent is worth deploying and when a classic RPA robot does the job faster, cheaper and without hallucinations. Covered combining existing RPA fleets with AI agents, starting without burning the budget, limiting LLM hallucinations in business processes, and agent teams that verify each other.',
+      type: 'webinar',
+      roles: ['speaker'],
+      photos: []
+    },
+    {
+      id: 'piwo4devs-wroclaw-2026',
+      title: 'Piwo4Devs Wrocław: An Evening of Automation',
+      date: 'September 17, 2026',
+      dateSort: '2026-09-17',
+      location: 'Man Cave, Wrocław, Poland',
+      description: 'Co-organized this UiPath Community Polska evening meetup with XELTO and Subeo, featuring three UiPath MVPs on one stage. Presented "Before You Let an AI Agent into Company Data" on how agentic access changes the data-leak risk model. Other sessions covered IT recruitment from the other side of the table and UiPath Maestro through a sceptic\'s eyes, followed by a networking game and Kahoot.',
+      type: 'meetup',
+      roles: ['organizer', 'speaker'],
+      photos: []
+    },
+    {
+      id: 'uipath-agenthack-2026',
+      title: 'UiPath AgentHack: Xelto Fleet Intelligence',
+      date: 'July 2026',
+      dateSort: '2026-07-06',
+      location: 'Online hackathon',
+      description: 'Built and submitted Xelto Fleet Intelligence with Polish UiPath MVPs Kamil Miśko and Piotr Kołakowski and the XELTO team. Two UiPath coded apps on a single data layer (a Driver App for expenses and invoices, a Fleet Manager App for claim review and fleet health), orchestrated by AI agents with RAG, IXP and Data Fabric for fleet expense fraud detection.',
+      type: 'conference',
+      roles: ['attendee'],
+      link: 'https://mikzielinski.github.io/HckFleetInteli/Demo/',
+      photos: []
+    },
+    {
+      id: 'xelto-netsuite-webinar-2026',
+      title: 'XELTO Webinar: AI in NetSuite Without Empty Promises',
+      date: 'July 2026',
+      dateSort: '2026-07-01',
+      location: 'Online',
+      description: 'Speaker at the XELTO webinar on practical AI deployments with Oracle NetSuite. My part: how to start the AI journey in a company — rolling AI out without burning the budget, protecting data when AI agents are involved, and optimizing business process costs.',
+      type: 'webinar',
+      roles: ['speaker'],
+      photos: []
+    },
+    {
+      id: 'mvp-summit-madrid-2026',
+      title: 'UiPath MVP Summit 2026 - Madrid',
+      date: 'June 24, 2026',
+      dateSort: '2026-06-24',
+      location: 'Madrid, Spain',
+      description: 'Attended the annual UiPath MVP Summit in my third year as an MVP, together with almost the entire Polish MVP crew. MVPs from around the world meet the UiPath product teams in person to exchange ideas and feedback that shape how the platform evolves.',
+      type: 'conference',
+      roles: ['attendee'],
+      photos: []
+    },
+    {
+      id: 'fusion-prague-2026',
+      title: 'UiPath Fusion Prague',
+      date: 'June 2026',
+      dateSort: '2026-06-05',
+      location: 'Prague, Czech Republic',
+      description: 'The first UiPath Fusion dedicated to the Czech and Slovak markets. Supported Roel Zwakman in reopening the UiPath Community chapter for the Czech Republic.',
+      type: 'conference',
+      roles: ['attendee'],
+      photos: []
+    },
+    {
+      id: 'agent-pageant-fusion-warsaw-2026',
+      title: 'Agent Pageant Hackathon Final @ UiPath Fusion Warsaw',
+      date: 'March 19, 2026',
+      dateSort: '2026-03-19',
+      location: 'UiPath Fusion, Warsaw, Poland',
+      description: 'Co-organized Agent Pageant, the agentic automation hackathon run by UiPath Poland and UiPath Community Poland, with its live final on the UiPath Fusion Warsaw stage. Two tracks: "Agent for Everyone" (a single AI agent on the UiPath Platform) and "Maestro Mind" (multi-component agentic systems orchestrated in UiPath Maestro), with €1,500 main prizes and an audience award. Also built the public-choice voting app used during the final.',
+      type: 'conference',
+      roles: ['organizer'],
+      link: 'https://github.com/mikzielinski/FusionHckVote',
+      photos: []
+    },
+    {
       id: 'wroclaw-2025',
       title: 'UiPath Lounge: Workflow & Chill - Wrocław',
       date: 'September 12, 2025',
@@ -92,11 +171,11 @@ const Events = () => {
     },
     {
       id: 'kozminski-university',
-      title: 'Kozminski University - RPA & Automation Lecturer',
-      date: '2024-2025',
-      dateSort: '2024-09-01',
+      title: 'Kozminski University - Automation Architecture Lecturer',
+      date: '2025 - present',
+      dateSort: '2025-10-01',
       location: 'Kozminski University, Warsaw, Poland',
-      description: 'Lecturer at Kozminski University teaching RPA, automation, and intelligent process automation. Educating students on cutting-edge automation technologies and business transformation through automation.',
+      description: 'Lecturer at Kozminski University since October 2025, teaching automation architecture, system integrations and API design, governance and quality assurance in enterprise digital transformation. The program is technology-agnostic and focused on the practical side of designing, deploying and maintaining automation solutions in enterprise environments.',
       type: 'workshop',
       roles: ['lecturer'],
       photos: []

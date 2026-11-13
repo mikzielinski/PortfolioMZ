@@ -4,7 +4,6 @@ import './About.css'
 
 const About = () => {
   const [bioExpanded, setBioExpanded] = useState(false)
-  const [technicalExpanded, setTechnicalExpanded] = useState(false)
 
   return (
     <section id="about" className="about">
@@ -25,6 +24,8 @@ const About = () => {
                 <ul>
                   <li>Design and review system architectures with a focus on reliability and long-term stability</li>
                   <li>Build and integrate automation platforms using UiPath and custom software components</li>
+                  <li>Design agentic automation: AI agents, Maestro orchestration and human-in-the-loop</li>
+                  <li>Help companies adopt AI safely, protecting data before it reaches external models</li>
                   <li>Analyze system failures, edge cases, and hidden assumptions</li>
                   <li>Help teams understand and fix problems that only appear at scale</li>
                 </ul>
@@ -78,6 +79,7 @@ const About = () => {
                   <li>Automation and orchestration (UiPath, agent-based systems)</li>
                   <li>Integration design and API-based systems</li>
                   <li>Reliability engineering and failure analysis</li>
+                  <li>AI governance and data protection for LLM use (AI Act, ISO 42001)</li>
                   <li>Data integrity, precision, and boundary conditions</li>
                   <li>Long-running and mission-critical systems</li>
                 </ul>
@@ -103,11 +105,11 @@ const About = () => {
               <h3 className="about-section-title">Credentials & Achievements</h3>
               <div className="about-details">
               <div className="about-item">
-                <h4>UiPath MVP 2024 & 2025</h4>
+                <h4>3x UiPath MVP (2024, 2025, 2026)</h4>
                 <p>
-                  Recognized as a Most Valuable Professional by UiPath for two consecutive years 
-                  (2024 & 2025) for outstanding contributions to the automation community, 
-                  expertise in RPA technologies, and active engagement on the UiPath Community Forum.
+                  Recognized as a UiPath Most Valuable Professional for three consecutive years, 
+                  in the Solution Developer category, for contributions to the automation community: 
+                  organizing events, mentoring, hackathons, and building agentic automation solutions.
                 </p>
               </div>
               <div className="about-item">
@@ -121,9 +123,9 @@ const About = () => {
               <div className="about-item">
                 <h4>Lecturer & Educator</h4>
                 <p>
-                  Passionate educator delivering lectures on automation, AI, and business transformation. 
-                  Committed to knowledge sharing and mentoring the next generation of automation professionals 
-                  through practical insights and real-world experiences.
+                  Lecturer at Kozminski University (since 2025) on automation architecture, integrations, 
+                  API design, governance and QA, and previously at SGH Warsaw School of Economics. 
+                  Committed to mentoring the next generation of automation professionals.
                 </p>
               </div>
               <div className="about-item">
@@ -135,11 +137,12 @@ const About = () => {
                 </p>
               </div>
               <div className="about-item">
-                <h4>UiPath Lead at Proservartner</h4>
+                <h4>Automation Solution Architect at XELTO</h4>
                 <p>
-                  Leading automation initiatives and teams to deliver transformative solutions that 
-                  streamline operations and enhance business efficiency. Driving digital transformation 
-                  through intelligent automation strategies.
+                  Since May 2026, designing enterprise-scale intelligent and agentic automation, system 
+                  integrations and automation architecture at XELTO. Co-creating AIRelay, a security 
+                  layer between users and AI models that protects company data before it reaches 
+                  external providers. Previously UiPath Lead at Proservartner (2023–2026).
                 </p>
               </div>
               <div className="about-item">

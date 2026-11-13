@@ -16,7 +16,7 @@ const Hero = () => {
           <div className="hero-image-wrapper">
             <img 
               src={`${import.meta.env.BASE_URL}profile-photo.jpg`}
-              alt="Mikołaj Zieliński - AI and Automation Lead"
+              alt="Mikołaj Zieliński - Automation Solution Architect"
               className="hero-profile-photo"
               onError={(e) => {
                 console.error('Failed to load profile photo:', e);
@@ -28,18 +28,18 @@ const Hero = () => {
             <div className="hero-image-overlay"></div>
           </div>
           <div className="hero-text-content">
-            <div className="hero-badge">UiPath MVP 2024 & 2025</div>
+            <div className="hero-badge">3x UiPath MVP · 2024 · 2025 · 2026</div>
             <h1 className="hero-title">
               Mikołaj Zieliński
             </h1>
           <p className="hero-subtitle">
-            Software Architect | RPA & UiPath Expert | Integration & Reliability Specialist
+            Automation Solution Architect @ XELTO | UiPath Community Lead Poland | Agentic Automation & Secure AI
           </p>
           <p className="hero-intro">
-            I help organizations build reliable software and automation systems that scale — from architecture to execution.
+            I help organizations build reliable automation and AI systems that scale — from architecture to execution, with company data kept under control.
           </p>
           <p className="hero-description">
-            Leading digital transformation through intelligent automation, system architecture, and process optimization.
+            Over 10 years of turning business processes into intelligent automation: classic RPA, API integrations and Document Understanding, through to AI agents and LLM-based solutions.
           </p>
           <div className="hero-buttons">
             <button 

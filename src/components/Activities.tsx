@@ -12,24 +12,24 @@ const Activities = () => {
   const activities: Activity[] = [
     {
       icon: <FaCertificate />,
-      title: 'UiPath MVP 2024 & 2025',
-      description: 'Recognized as Most Valuable Professional for two consecutive years for outstanding contributions to the UiPath community.',
+      title: '3x UiPath MVP (2024-2026)',
+      description: 'Recognized as Most Valuable Professional for three consecutive years (Solution Developer category) for contributions to the UiPath community.',
       link: 'https://forum.uipath.com/u/mikolaj_zielinski/activity'
     },
     {
       icon: <FaMicrophone />,
       title: 'Conference Speaker',
-      description: 'Regular speaker at automation conferences including UiPath Community Days (Warsaw, Łódź, Krakow) and Devs4Devs events, sharing insights on RPA, AI integration, agentic automation, and business transformation strategies. Topics: "When Bots Find Zen", "Agentic Automation: Common Pitfalls", "How AI can save lives".',
+      description: 'Regular speaker at UiPath Community Days (Warsaw, Łódź, Krakow), Devs4Devs and Piwo4Devs meetups, webinars and podcasts, sharing insights on RPA, agentic automation and secure AI adoption. Topics: "Before You Let an AI Agent into Company Data", "When Bots Find Zen", "Agentic Automation: Common Pitfalls", "How AI can save lives".',
     },
     {
       icon: <FaUsers />,
       title: 'Conference & Meeting Organizer',
-      description: 'Organizing UiPath community events and meetups across Poland (Warsaw, Łódź, Wrocław, Krakow). Events attract 99-169+ RSVPs, bringing together automation professionals to share knowledge and best practices.',
+      description: 'Organizing UiPath community events and meetups across Poland (Warsaw, Łódź, Wrocław, Krakow) and co-organizing the Agent Pageant agentic automation hackathon, with its final at UiPath Fusion Warsaw 2026. Events attract 99-169+ RSVPs, bringing together automation professionals to share knowledge and best practices.',
     },
     {
       icon: <FaChalkboardTeacher />,
       title: 'Lecturer & Educator',
-      description: 'Teaching Business Process Automation and RPA Development at SGH (Warsaw School of Economics) and Kozminski University. Audiences up to 200+ students per term. Courses focus on practical automation engineering, real-world use cases, and hands-on implementation.',
+      description: 'Teaching automation architecture, integrations, governance and QA at Kozminski University (since 2025), and previously Business Process Automation and RPA Development at SGH (Warsaw School of Economics). Audiences up to 200+ students per term. Courses focus on practical automation engineering, real-world use cases, and hands-on implementation.',
     },
     {
       icon: <FaHandsHelping />,
