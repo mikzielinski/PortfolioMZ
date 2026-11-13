@@ -50,7 +50,7 @@ const companies: Company[] = [
           'Architecting agentic automation: AI agents for order intake and claims handling that work alongside RPA robots and hand off to humans where needed',
           'Developing Task2Mask (formerly AiRelay) — a security layer between employees and AI models that protects company data before it reaches external AI providers',
           'Combining UiPath and n8n in one automation landscape — choosing the right tool per process and keeping orchestration observable',
-          'Automating finance, supply chain and HR processes integrated with ERP systems (incl. JD Edwards and NetSuite)',
+          'Automating finance, supply chain and HR processes integrated with ERP systems',
           'Shaping governance for AI in automation in line with the EU AI Act and ISO/IEC 42001',
         ],
         tags: ['Solution Architecture', 'Agentic Automation', 'UiPath', 'n8n', 'ERP Integrations', 'AI Governance'],

@@ -32,7 +32,7 @@ const principles = [
 
 const expertise = [
   'UiPath', 'n8n', 'Power Platform', 'Agentic automation', 'Human-in-the-loop', 'IDP / AI OCR',
-  'REST & SOAP APIs', 'SQL', 'JD Edwards', 'NetSuite', 'SAP', 'Microsoft Azure',
+  'REST & SOAP APIs', 'SQL', 'SAP', 'Microsoft Azure',
   'UiPath Automation Cloud', 'On-Prem → SaaS', 'PDD / SDD standards', 'GxP', 'EU AI Act',
   'ISO/IEC 42001', 'Reliability & failure analysis',
 ]
