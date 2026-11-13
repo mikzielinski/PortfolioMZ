@@ -96,7 +96,6 @@ const Events = () => {
       description: 'Co-organized Agent Pageant, the agentic automation hackathon run by UiPath Poland and UiPath Community Poland, with its live final on the UiPath Fusion Warsaw stage. Two tracks: "Agent for Everyone" (a single AI agent on the UiPath Platform) and "Maestro Mind" (multi-component agentic systems orchestrated in UiPath Maestro), with €1,500 main prizes and an audience award. Also built the public-choice voting app used during the final.',
       type: 'conference',
       roles: ['organizer'],
-      link: 'https://github.com/mikzielinski/FusionHckVote',
       photos: []
     },
     {

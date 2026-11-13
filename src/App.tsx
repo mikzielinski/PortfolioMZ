@@ -55,10 +55,6 @@ const repoDescriptions: { [key: string]: string } = {
 
   'PythonAPIExplorer': 'PAD HTTP Tracing Toolkit - Advanced debugging tool for Power Automate Desktop (PAD) HTTP calls. Two complementary approaches: Frida-based inline tracer that hooks WinHTTP/WinINet inside PAD worker processes (auto-rescans for child processes) and records complete request/response bodies with headers to JSON logs, and Mitmproxy-based intercepting proxy with automatic Windows proxy configuration and certificate installation. Captures all outbound HTTP calls from PAD, PowerShell, CMD, and helper processes without TLS interception or manual proxy setup. Perfect for debugging API integrations, analyzing PAD behavior, and reverse-engineering automation workflows.',
 
-  'vba_uipath': 'VBA and UiPath integration project - Bridge between Visual Basic for Applications (VBA) and UiPath automation platform. Contains VBA code module and UiPath workflow (XAML) for seamless communication between Excel/VBA macros and UiPath robots. Enables triggering UiPath processes from VBA, exchanging data between VBA applications and UiPath automations, and orchestrating hybrid automation workflows combining desktop automation with enterprise RPA capabilities.',
-
-  'FusionHckVote': 'Public Choice Award voting app for the Agent Pageant hackathon final at UiPath Fusion Warsaw 2026. Mobile-first static SPA (vanilla JavaScript, hash routing) on GitHub Pages with Firebase Firestore: one vote per participant (changeable), judge-only results with Chart.js, team-only views via token links, and a password-protected admin panel for managing projects.',
-
   'HckFleetInteli': 'Fleet Intelligence - UiPath AgentHack 2026 submission built with Polish UiPath MVPs and the XELTO team. End-to-end fleet expense fraud detection consolidating three UiPath components: a Driver App (coded app for submitting expenses and invoices), an AI agent orchestrated in UiPath Maestro that investigates claims, and a Fleet Manager app for review and approval, all on Data Fabric. Includes a public browser-only demo for judges.',
 
   'glados-r1': 'Voice agent for the Rabbit R1 with switchable agent personas (HAL 9000, GLaDOS, TARS and more). The R1 acts as a thin push-to-talk client streaming audio over WebSocket to a Node/TypeScript backend with Whisper speech-to-text, a local SLM via Ollama or a Cursor SDK agent for harder tasks, RAG memory, and Piper/Fish text-to-speech. The project behind the "I Gave Rabbit R1 the Second Life It Deserved" article.',
@@ -69,13 +65,9 @@ const repoDescriptions: { [key: string]: string } = {
 
   'yololizer': 'Local, cloud-free workbench for computer vision: upload images or video, annotate bounding boxes and polygons, train YOLO models and run inference. Python API in Docker (with optional NVIDIA GPU), a static UI on GitHub Pages that connects to the local API, and one-click GitHub Codespaces setup.',
 
-  'ProjectReviewRepository': 'DMS + SDLC governance platform for software and automation projects. Controlled documentation (PDD, SDD, TSS, test plans, release notes) with a full lifecycle from draft to archive, enforced segregation of duties (an author cannot approve, a reviewer cannot also approve, temporary auditors cannot sign off), immutable approved versions, an evidence vault with SHA-256 hashes, audit logging, and approval gates that block downstream work on a governance-aware Gantt. An AI document factory drafts content from Word templates, but AI output always lands as a draft with an auto-created review task. React SPA + FastAPI + PostgreSQL + MinIO in Docker.',
-
   'RPGPlayerAAI': 'An AI player that joins a tabletop RPG session and plays like a human at the table. Listens through the microphone (Whisper speech-to-text), classifies each moment as wait / my turn / speak up, and answers out loud in Polish either as the player or in-world as its own character. Long sessions are kept coherent with a rolling context window plus LLM-summarized long-term memory. Text-to-speech via Edge TTS, OpenAI TTS or Kokoro.',
 
   'webinarTool': 'Browser-based webinar teleprompter: agenda editor with per-chapter timing and speaker notes, Markdown/JSON templates, a live prompter with chapter and overall progress, auto-advance, full-screen recording view and a gaze target that keeps your eyes on the camera. Experimental PPTX/PDF slide mapping. Runs entirely in the browser - nothing is sent to a server. Built for XELTO webinars.',
-
-  'PagentA': 'Website of the Agent Pageant 2026 hackathon, organized by UiPath Poland and UiPath Community Poland with the final at UiPath Fusion Warsaw. Animated, bilingual (PL/EN) information hub with a live countdown, event timeline, competition tasks and participant policies, deployed on GitHub Pages.',
 
   // Note: 'spaghetti' is part of PISim, not a separate project - spaghetti diagrams are a visualization feature
 }
@@ -84,7 +76,6 @@ const repoDescriptions: { [key: string]: string } = {
 const featuredRepos = [
   'HckFleetInteli',
   'TrackLoadSim',
-  'ProjectReviewRepository',
   'glados-r1',
   'RPGPlayerAAI',
   'yololizer',
@@ -98,7 +89,6 @@ const liveDemos: { [key: string]: string } = {
   'HckFleetInteli': 'https://mikzielinski.github.io/HckFleetInteli/Demo/',
   'UiPathUnifiedCalculator': 'https://mikzielinski.github.io/UiPathUnifiedCalculator/',
   'webinarTool': 'https://mikzielinski.github.io/webinarTool/',
-  'PagentA': 'https://mikzielinski.github.io/PagentA/',
 }
 
 // Repos kept public on GitHub but not shown here: empty placeholders, UiPath
@@ -108,6 +98,7 @@ const hiddenRepos = [
   'mikzielinski', 'newSH', 'CzechFusion', 'REF_Perf', 'REF-Disp',
   'DPDAgent', 'dpdDriverApp', 'dpdFleetManager', 'rpalicense', 'tabyplaygems',
   'AbsenceTool', 'Enhanced-absence-tool', 'Devs4DevsSite',
+  'PagentA', 'FusionHckVote', 'vba_uipath', 'ProjectReviewRepository',
 ]
 
 function App() {
