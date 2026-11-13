@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FaBriefcase, FaGraduationCap, FaUsers, FaMapMarkerAlt } from 'react-icons/fa'
+import { FaBriefcase, FaGraduationCap, FaUsers, FaMapMarkerAlt, FaChevronDown, FaChevronUp } from 'react-icons/fa'
 import './Experience.css'
 
 type Kind = 'work' | 'teaching' | 'community'
@@ -46,11 +46,11 @@ const companies: Company[] = [
         current: true,
         highlights: [
           'Designing end-to-end intelligent automation solutions — from process assessment and solution design to delivery and hypercare',
+          'Building custom applications that speed up and standardize the automation development lifecycle, incl. AI coding agents in the dev workflow',
           'Architecting agentic automation: AI agents for order intake and claims handling that work alongside RPA robots and hand off to humans where needed',
+          'Developing Task2Mask (formerly AiRelay)', // TODO: one-line product description
           'Combining UiPath and n8n in one automation landscape — choosing the right tool per process and keeping orchestration observable',
           'Automating finance, supply chain and HR processes integrated with ERP systems (incl. JD Edwards and NetSuite)',
-          'Building custom applications that speed up and standardize the automation development lifecycle, incl. AI coding agents in the dev workflow',
-          'Developing Task2Mask (formerly AiRelay)', // TODO: one-line product description
           'Shaping governance for AI in automation in line with the EU AI Act and ISO/IEC 42001',
         ],
         tags: ['Solution Architecture', 'Agentic Automation', 'UiPath', 'n8n', 'ERP Integrations', 'AI Governance'],
@@ -272,6 +272,43 @@ const CompanyLogo = ({ company }: { company: Company }) => {
   )
 }
 
+const TOP_HIGHLIGHTS = 3
+
+const RoleBlock = ({ role }: { role: Role }) => {
+  const [expanded, setExpanded] = useState(false)
+  const hidden = role.highlights.length - TOP_HIGHLIGHTS
+  const shown = expanded ? role.highlights : role.highlights.slice(0, TOP_HIGHLIGHTS)
+
+  return (
+    <div className="xp-role">
+      <div className="xp-role-head">
+        <h3>{role.title}</h3>
+        <span className="xp-period">
+          {role.current && <span className="xp-now">Now</span>}
+          {role.period}
+        </span>
+      </div>
+      <ul>
+        {shown.map((h, j) => <li key={j} className={j >= TOP_HIGHLIGHTS ? 'xp-extra' : undefined}>{h}</li>)}
+      </ul>
+      {hidden > 0 && (
+        <button
+          className="xp-readmore"
+          onClick={() => setExpanded(v => !v)}
+          aria-expanded={expanded}
+        >
+          {expanded ? <>Show less <FaChevronUp /></> : <>Read more (+{hidden}) <FaChevronDown /></>}
+        </button>
+      )}
+      {role.tags && (
+        <div className="xp-tags">
+          {role.tags.map(t => <span key={t}>{t}</span>)}
+        </div>
+      )}
+    </div>
+  )
+}
+
 const Experience = () => {
   const [filter, setFilter] = useState<Kind | 'all'>('all')
   const [showEarly, setShowEarly] = useState(false)
@@ -325,25 +362,7 @@ const Experience = () => {
                   </div>
                 </header>
 
-                {company.roles.map((role, i) => (
-                  <div key={i} className="xp-role">
-                    <div className="xp-role-head">
-                      <h3>{role.title}</h3>
-                      <span className="xp-period">
-                        {role.current && <span className="xp-now">Now</span>}
-                        {role.period}
-                      </span>
-                    </div>
-                    <ul>
-                      {role.highlights.map((h, j) => <li key={j}>{h}</li>)}
-                    </ul>
-                    {role.tags && (
-                      <div className="xp-tags">
-                        {role.tags.map(t => <span key={t}>{t}</span>)}
-                      </div>
-                    )}
-                  </div>
-                ))}
+                {company.roles.map((role, i) => <RoleBlock key={i} role={role} />)}
               </article>
             </li>
           ))}
