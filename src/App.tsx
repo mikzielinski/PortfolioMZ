@@ -10,6 +10,7 @@ import Contact from './components/Contact'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import './App.css'
+import './theme.css'
 
 interface GitHubRepo {
   id: number

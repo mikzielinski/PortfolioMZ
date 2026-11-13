@@ -78,7 +78,7 @@ const Projects = ({ repos, loading }: ProjectsProps) => {
     return (
       <section id="projects" className="projects">
         <div className="container">
-          <h2 className="section-title">Featured Projects</h2>
+          <h2 className="section-title" data-eyebrow="04 · Projects">Things I've built</h2>
           <div className="loading">Loading projects...</div>
         </div>
       </section>
@@ -88,7 +88,7 @@ const Projects = ({ repos, loading }: ProjectsProps) => {
   return (
     <section id="projects" className="projects">
       <div className="container">
-        <h2 className="section-title">Featured Projects</h2>
+        <h2 className="section-title" data-eyebrow="04 · Projects">Things I've built</h2>
         <p className="section-subtitle">
           A few things I've built — from process simulation to IoT and dev tooling
         </p>

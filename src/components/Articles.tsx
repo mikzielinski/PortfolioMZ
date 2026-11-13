@@ -18,7 +18,7 @@ const Articles = ({ articles }: ArticlesProps) => {
   return (
     <section id="articles" className="articles">
       <div className="container">
-        <h2 className="section-title">Featured Articles</h2>
+        <h2 className="section-title" data-eyebrow="05 · Writing">Featured articles</h2>
         <p className="section-subtitle">
           Insights and thoughts on AI, RPA, and business transformation
         </p>

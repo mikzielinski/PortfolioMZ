@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <section id="contact" className="contact">
       <div className="container">
-        <h2 className="section-title">Let's Connect</h2>
+        <h2 className="section-title" data-eyebrow="06 · Contact">Let's build something reliable</h2>
         <p className="section-subtitle">
           Open to: architecture consulting, automation strategy, reliability reviews, speaking engagements, and technical collaboration.
         </p>

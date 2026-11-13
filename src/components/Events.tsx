@@ -377,7 +377,7 @@ const Events = () => {
   return (
     <section id="events" className="events">
       <div className="container">
-        <h2 className="section-title">Speaking & Teaching</h2>
+        <h2 className="section-title" data-eyebrow="03 · Speaking & Teaching">On stage and in the classroom</h2>
         <p className="section-subtitle">
           Talks, community events I organize, and the courses I teach
         </p>

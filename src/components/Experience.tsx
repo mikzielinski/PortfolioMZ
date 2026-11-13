@@ -319,8 +319,8 @@ const Experience = () => {
   return (
     <section id="experience" className="experience">
       <div className="container">
-        <h2 className="section-title">Experience</h2>
-        <p className="section-subtitle">Where I build, lead and teach automation</p>
+        <h2 className="section-title" data-eyebrow="02 · Experience">Where I've built, led and taught</h2>
+        <p className="section-subtitle">Seven years across enterprise automation teams, platforms and classrooms.</p>
 
         <div className="xp-filters" role="tablist">
           {(['all', 'work', 'teaching', 'community'] as const).map(k => (

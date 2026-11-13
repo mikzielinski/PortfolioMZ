@@ -1,0 +1,155 @@
+/* ============================================================
+   Redesign 2026 — shared look for every section below the hero
+   Navy (--ink) + one coral accent, editorial left-aligned headers
+   ============================================================ */
+
+/* ---------- Section rhythm ---------- */
+section { padding: 6rem 0; }
+body .experience { background: var(--bg-primary); }
+body .projects { background: var(--bg-secondary); }
+body .articles { background: var(--bg-primary); }
+
+/* ---------- Section headers ---------- */
+body .section-title {
+  text-align: left;
+  max-width: 820px;
+  margin-bottom: 0.75rem;
+}
+
+body .section-title::before {
+  content: attr(data-eyebrow);
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 0.9rem;
+}
+
+body .section-title::after { display: none; }
+
+body .section-title + :not(.section-subtitle) { margin-top: 2.5rem; }
+
+body .section-subtitle {
+  text-align: left;
+  margin: 0 0 3rem;
+  max-width: 640px;
+}
+
+/* ---------- Shared cards ---------- */
+body .xp-card,
+body .project-card,
+body .article-card,
+body .event-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: none;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+body .xp-card:hover,
+body .project-card:hover,
+body .article-card:hover {
+  transform: translateY(-3px);
+  border-color: #cfd6e4;
+  box-shadow: 0 12px 32px rgba(11, 19, 36, 0.08);
+}
+
+/* ---------- Experience ---------- */
+body .xp-filters { justify-content: flex-start; }
+body .xp-timeline { margin: 0; max-width: none; }
+body .xp-filter.active {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+body .xp-timeline::before {
+  background: linear-gradient(to bottom, var(--accent-color), var(--border-color) 30%);
+}
+body .xp-dot { border-color: #cbd5e1; }
+body .xp-item.current .xp-dot {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 6px rgba(255, 90, 54, 0.18);
+}
+body .xp-role-head h3 { color: var(--text-primary); }
+body a.xp-company:hover { color: var(--accent-color); }
+body .xp-readmore { color: var(--accent-color); }
+body .xp-readmore:hover { color: var(--accent-dark); }
+body .xp-kind-work { background: #eef2fb; color: var(--primary-color); }
+body .xp-more { justify-content: flex-start; padding-left: 2.5rem; }
+
+/* ---------- Speaking & Teaching (dark band, echoes the hero) ---------- */
+body .events {
+  background-color: var(--ink);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+body .events .section-title { color: #ffffff; }
+body .events .section-subtitle { color: #94a3b8; }
+body .events-subsection-title {
+  color: #ffffff;
+  text-align: left;
+  font-size: 1.25rem;
+}
+body .event-card { border-color: transparent; }
+body .event-card h3 { color: var(--text-primary); }
+body .event-meta-item svg { color: var(--accent-color); }
+body .event-link { color: var(--accent-color); }
+body .carousel-button {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+}
+body .carousel-button:hover { background: var(--accent-color); border-color: var(--accent-color); }
+body .carousel-indicator { border-color: rgba(255, 255, 255, 0.4); }
+body .carousel-indicator.active,
+body .carousel-indicator:hover { background: var(--accent-color); border-color: var(--accent-color); }
+body .events-note { color: #94a3b8; }
+
+/* ---------- Projects ---------- */
+body .project-header h3 { font-size: 1.15rem; }
+body .project-header a:hover,
+body .project-link,
+body .project-read-more { color: var(--accent-color); }
+body .projects-cta { justify-content: flex-start; }
+
+/* ---------- Articles ---------- */
+body .article-card h3 { font-size: 1.15rem; line-height: 1.35; }
+body .article-link { color: var(--accent-color); }
+body .articles-cta { text-align: left; justify-content: flex-start; }
+
+/* ---------- Contact + footer ---------- */
+body .contact {
+  position: relative;
+  background-color: var(--ink);
+  background-image: radial-gradient(600px 300px at 90% 0%, rgba(255, 90, 54, 0.18), transparent 70%);
+}
+body .contact .section-title { color: #ffffff; }
+body .contact .section-subtitle { color: #94a3b8; }
+body .contact-content { max-width: none; }
+body .contact-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  text-align: left;
+  align-items: flex-start;
+}
+body .contact-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent-color);
+}
+body .contact-icon { color: var(--accent-color); }
+body .footer {
+  background: var(--ink);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 640px) {
+  section { padding: 4.5rem 0; }
+  body .xp-more { padding-left: 0; }
+}
