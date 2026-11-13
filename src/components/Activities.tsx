@@ -12,8 +12,8 @@ const Activities = () => {
   const activities: Activity[] = [
     {
       icon: <FaCertificate />,
-      title: 'UiPath MVP 2024 & 2025',
-      description: 'Recognized as Most Valuable Professional for two consecutive years for outstanding contributions to the UiPath community.',
+      title: 'UiPath MVP 2024 · 2025 · 2026',
+      description: 'Recognized as Most Valuable Professional for three consecutive years for outstanding contributions to the UiPath community.',
       link: 'https://forum.uipath.com/u/mikolaj_zielinski/activity'
     },
     {

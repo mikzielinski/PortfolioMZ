@@ -28,7 +28,7 @@ const Hero = () => {
             <div className="hero-image-overlay"></div>
           </div>
           <div className="hero-text-content">
-            <div className="hero-badge">UiPath MVP 2024 & 2025</div>
+            <div className="hero-badge">UiPath MVP 2024 · 2025 · 2026</div>
             <h1 className="hero-title">
               Mikołaj Zieliński
             </h1>

@@ -102,10 +102,10 @@ const About = () => {
               <h3 className="about-section-title">Credentials & Achievements</h3>
               <div className="about-details">
               <div className="about-item">
-                <h4>UiPath MVP 2024 & 2025</h4>
+                <h4>UiPath MVP 2024, 2025 & 2026</h4>
                 <p>
-                  Recognized as a Most Valuable Professional by UiPath for two consecutive years 
-                  (2024 & 2025) for outstanding contributions to the automation community, 
+                  Recognized as a Most Valuable Professional by UiPath for three consecutive years 
+                  (2024, 2025 & 2026) for outstanding contributions to the automation community, 
                   expertise in RPA technologies, and active engagement on the UiPath Community Forum.
                 </p>
               </div>

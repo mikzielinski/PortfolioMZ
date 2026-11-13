@@ -86,7 +86,7 @@ const companies: Company[] = [
     kind: 'community',
     roles: [
       {
-        title: 'Community Lead & Event Organizer · UiPath MVP 2024 & 2025',
+        title: 'Community Lead & Event Organizer · UiPath MVP 2024 · 2025 · 2026',
         period: '2024 – Present',
         current: true,
         highlights: [
@@ -118,7 +118,7 @@ const companies: Company[] = [
   {
     id: 'proservartner',
     name: 'Proservartner',
-    logo: 'proservartner.png',
+    logo: 'proservartner.webp',
     monogram: 'PS',
     brandColor: '#1e3a8a',
     location: 'Wrocław · Remote',
