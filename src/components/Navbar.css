@@ -144,3 +144,53 @@
     transform: rotate(-45deg) translate(7px, -7px);
   }
 }
+
+/* Redesign 2026: dark glass navbar */
+.navbar {
+  background: rgba(11, 19, 36, 0.78);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
+.navbar.scrolled {
+  background: rgba(11, 19, 36, 0.94);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+}
+
+.navbar-logo {
+  font-family: var(--font-heading);
+  background: none;
+  -webkit-text-fill-color: #ffffff;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.navbar-logo::after {
+  content: '.';
+  color: var(--accent-color);
+  -webkit-text-fill-color: var(--accent-color);
+}
+
+.navbar-links a,
+.navbar-social a {
+  color: #cbd5e1;
+}
+
+.navbar-links a:hover,
+.navbar-social a:hover {
+  color: #ffffff;
+}
+
+.navbar-links a::after {
+  background: var(--accent-color);
+}
+
+.navbar-toggle span {
+  background: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .navbar-links {
+    background: var(--ink);
+  }
+}

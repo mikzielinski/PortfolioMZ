@@ -90,7 +90,7 @@ const Projects = ({ repos, loading }: ProjectsProps) => {
       <div className="container">
         <h2 className="section-title">Featured Projects</h2>
         <p className="section-subtitle">
-          Explore my open-source projects and contributions on GitHub
+          A few things I've built — from process simulation to IoT and dev tooling
         </p>
         <div className="projects-grid">
           {repos.map((repo) => {
@@ -174,6 +174,11 @@ const Projects = ({ repos, loading }: ProjectsProps) => {
               </div>
             )
           })}
+        </div>
+        <div className="projects-cta">
+          <a href="https://github.com/mikzielinski" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+            <FaGithub /> More on GitHub
+          </a>
         </div>
       </div>
     </section>

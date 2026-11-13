@@ -231,10 +231,10 @@ const Events = () => {
 
   const getEventTypeColor = (type: Event['type']) => {
     const colors = {
-      conference: '#6366f1',
-      meetup: '#8b5cf6',
-      workshop: '#ec4899',
-      webinar: '#f59e0b'
+      conference: '#1f3fbf',
+      meetup: '#3b6cf6',
+      workshop: '#ff5a36',
+      webinar: '#0b1324'
     }
     return colors[type]
   }
@@ -377,9 +377,9 @@ const Events = () => {
   return (
     <section id="events" className="events">
       <div className="container">
-        <h2 className="section-title">Events & Conferences</h2>
+        <h2 className="section-title">Speaking & Teaching</h2>
         <p className="section-subtitle">
-          Speaking engagements, workshops, and community events I've organized or participated in
+          Talks, community events I organize, and the courses I teach
         </p>
         
         {renderCarousel(

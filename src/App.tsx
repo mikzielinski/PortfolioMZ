@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react'
 import Hero from './components/Hero'
+import LogoStrip from './components/LogoStrip'
 import About from './components/About'
-import Skills from './components/Skills'
 import Experience from './components/Experience'
-import Activities from './components/Activities'
 import Events from './components/Events'
 import Projects from './components/Projects'
 import Articles from './components/Articles'
@@ -107,6 +106,21 @@ function App() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    // Render the curated projects at once, then replace them with the live list from the GitHub API
+    setRepos(featuredRepos.map((name, i) => ({
+      id: -(i + 1),
+      name,
+      description: repoDescriptions[name] ?? null,
+      html_url: `https://github.com/mikzielinski/${name}`,
+      language: null,
+      stargazers_count: 0,
+      fork: false,
+      created_at: '',
+      updated_at: '',
+      demo: liveDemos[name],
+    })))
+    setLoading(false)
+
     // Fetch GitHub repositories
     const fetchRepos = async () => {
       try {
@@ -232,10 +246,9 @@ function App() {
     <div className="App">
       <Navbar />
       <Hero />
+      <LogoStrip />
       <About />
       <Experience />
-      <Skills />
-      <Activities />
       <Events />
       <Projects repos={repos} loading={loading} />
       <Articles articles={articles} />
