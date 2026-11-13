@@ -245,3 +245,9 @@ a.xp-company:hover {
   .xp-logo { width: 52px; height: 52px; }
   .xp-company { font-size: 1.1rem; }
 }
+
+.xp-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}

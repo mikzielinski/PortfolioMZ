@@ -22,6 +22,8 @@ interface Company {
   url?: string
   location?: string
   kind: Kind
+  /** Collapsed under 'Show earlier roles' */
+  early?: boolean
   roles: Role[]
 }
 
@@ -29,13 +31,13 @@ interface Company {
 // To add a real logo: drop the file into public/logos/ and set `logo` below.
 const companies: Company[] = [
   {
-    id: 'xelto-digital',
+    id: 'xelto',
     name: 'Xelto Digital',
     logo: 'xelto-digital.png',
     monogram: 'XD',
     brandColor: '#111827',
     url: 'https://xeltodigital.com/en/',
-    location: 'Poland · Czechia',
+    location: 'Poland · Hybrid',
     kind: 'work',
     roles: [
       {
@@ -43,8 +45,8 @@ const companies: Company[] = [
         period: 'May 2026 – Present',
         current: true,
         highlights: [
-          'Designing end-to-end intelligent automation solutions (RPA & AI agents) for clients across finance, supply chain and HR processes',
-          'Building custom internal applications that speed up and standardize the automation development lifecycle',
+          'Designing end-to-end intelligent automation solutions (RPA & AI agents) for enterprise clients',
+          'Building custom applications that speed up and standardize the automation development lifecycle',
           'Developing Task2Mask (formerly AiRelay)', // TODO: one-line product description
         ],
         tags: ['Solution Architecture', 'UiPath', 'AI Agents', 'Custom Apps'],
@@ -52,22 +54,24 @@ const companies: Company[] = [
     ],
   },
   {
-    id: 'proservartner',
-    name: 'Proservartner',
-    logo: 'proservartner.png',
-    monogram: 'PS',
-    brandColor: '#1e3a8a',
-    location: 'Poland',
-    kind: 'work',
+    id: 'kozminski',
+    name: 'Kozminski University',
+    logo: 'kozminski.png',
+    monogram: 'ALK',
+    brandColor: '#8b0d32',
+    location: 'Warsaw · Hybrid',
+    kind: 'teaching',
     roles: [
       {
-        title: 'UiPath Lead',
-        period: 'until 2026', // TODO: start date
+        title: 'Lecturer',
+        period: 'Oct 2025 – Present',
+        current: true,
         highlights: [
-          'Led UiPath automation initiatives and delivery teams',
-          'Represented the company as UiPath MVP and speaker at UiPath Community Days (Kraków, Warsaw, Łódź)',
+          'Technology-agnostic courses on automation architecture, system integrations, APIs, governance and QA in enterprise digital transformation',
+          'Workshops on system integration and API architecture, built around real business scenarios',
+          'Designing training materials and hands-on exercises; mentoring students in process analysis and tech projects',
         ],
-        tags: ['UiPath', 'Team Leadership', 'Delivery'],
+        tags: ['API Integration', 'Governance', 'QA', 'Enterprise Architecture'],
       },
     ],
   },
@@ -103,7 +107,7 @@ const companies: Company[] = [
     roles: [
       {
         title: 'Lecturer',
-        period: '2024 – Present',
+        period: '2024 – 2025',
         highlights: [
           'Business Process Automation',
           'RPA Developer: Practice Point of View',
@@ -112,18 +116,122 @@ const companies: Company[] = [
     ],
   },
   {
-    id: 'kozminski',
-    name: 'Kozminski University',
-    logo: 'kozminski.png',
-    monogram: 'ALK',
-    brandColor: '#8b0d32',
-    location: 'Warsaw',
-    kind: 'teaching',
+    id: 'proservartner',
+    name: 'Proservartner',
+    logo: 'proservartner.png',
+    monogram: 'PS',
+    brandColor: '#1e3a8a',
+    location: 'Wrocław · Remote',
+    kind: 'work',
     roles: [
       {
-        title: 'Lecturer – RPA & Automation',
-        period: '2024 – Present',
-        highlights: ['RPA, intelligent process automation and business transformation'],
+        title: 'UiPath Lead · Automation Architect / Solution Owner',
+        period: 'Oct 2023 – Apr 2026',
+        highlights: [
+          'Designed and delivered automation solutions on UiPath and Microsoft Azure; integrations via REST, SOAP, SQL and cloud services',
+          'Led On-Prem → Cloud/SaaS migrations and defined UiPath Automation Cloud standards and configuration',
+          'Co-built an AI OCR system for processing and validating Arabic invoices (IDP on Azure AI Services)',
+          'Set documentation and governance standards (PDD, SDD, best practices), incl. GxP process validation',
+          'Mentored developer teams and ran UiPath, RPA and AI automation trainings and workshops',
+        ],
+        tags: ['UiPath', 'Microsoft Azure', 'IDP / AI OCR', 'SaaS Migration', 'RPA Governance'],
+      },
+    ],
+  },
+  {
+    id: 'bayer',
+    name: 'Bayer',
+    logo: 'bayer.png',
+    monogram: 'B',
+    brandColor: '#10384f',
+    location: 'Warsaw',
+    kind: 'work',
+    roles: [
+      {
+        title: 'Senior Solution Engineer Intelligent Automation / UiPath System Owner',
+        period: 'Jul 2022 – Mar 2024',
+        highlights: [
+          'System Owner of the enterprise UiPath platform, working directly with UiPath',
+          'Designed the UiPath Cloud setup and led the On-Prem → SaaS migration; validated GxP process documentation',
+          'Built reusable automation packages, API bridges and the MS Azure cloud environment setup',
+          'Defined SDD/PDD documentation standards and supported developers day to day',
+        ],
+        tags: ['UiPath', 'MS Azure', 'GxP', 'VB.NET'],
+      },
+    ],
+  },
+  {
+    id: 'olympus',
+    name: 'Olympus Business Services',
+    logo: 'olympus.png',
+    monogram: 'OBS',
+    brandColor: '#08107b',
+    location: 'Wrocław',
+    kind: 'work',
+    roles: [
+      {
+        title: 'Automation Developer & Lead Automation Operator',
+        period: 'Jan 2021 – Jul 2022',
+        highlights: [
+          'Developed robots for SAP, ServiceNow, Salesforce, MS Office and APIs, plus shared libraries for repeatable actions',
+          'Ran production operations: UiPath Orchestrator & Kibana administration, monitoring, incident root-cause analysis',
+          'Owned UAT/dry-run sessions, code promotion to production and KPI dashboards; onboarded new developers',
+        ],
+        tags: ['UiPath', 'SAP', 'Orchestrator', 'Kibana'],
+      },
+    ],
+  },
+  {
+    id: 'mahle',
+    name: 'MAHLE',
+    logo: 'mahle.png',
+    monogram: 'M',
+    brandColor: '#00529b',
+    location: 'Wrocław',
+    kind: 'work',
+    roles: [
+      {
+        title: 'Digital Automation Operator',
+        period: 'Oct 2019 – Dec 2020',
+        highlights: [
+          'Developed UiPath RPA solutions (REFramework) and supervised production, test and dev environments',
+          'Diagnosed robots and processes, tracked KPIs and mentored colleagues in UiPath',
+          'Subject-matter expert for Arago HIRO (AI) in an international team',
+        ],
+        tags: ['UiPath', 'Arago HIRO', 'Kryon', 'Python'],
+      },
+      {
+        title: 'Customer Portal Administrator',
+        period: 'Feb 2019 – Oct 2019',
+        highlights: [
+          'Managed access to OEM partner portals (BMW, VW, Volvo, FCA, Audi, GM, SAP Ariba and more)',
+          'Automated ticket handling with Python + Selenium and UiPath — my first RPA work',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'early-career',
+    name: 'Early career',
+    monogram: '•••',
+    brandColor: '#6b7280',
+    kind: 'work',
+    early: true,
+    roles: [
+      {
+        title: 'Service Desk Agent · Hemmersbach',
+        period: 'Aug 2018 – Jan 2019',
+        highlights: ['English-language IT support, ticket management and troubleshooting'],
+      },
+      {
+        title: 'Armored Transport Security Specialist · BR-ICS',
+        period: 'Aug 2017 – Aug 2018',
+        highlights: ['Securing US Army military transports for rail shipment; PL–EN interpreting and on-site IT support'],
+      },
+      {
+        title: "Master's Researcher · Hirszfeld Institute of Immunology and Experimental Therapy, PAS",
+        period: 'Jun 2015 – Mar 2018',
+        highlights: ['Genetics research using molecular biology techniques'],
       },
     ],
   },
@@ -162,7 +270,10 @@ const CompanyLogo = ({ company }: { company: Company }) => {
 
 const Experience = () => {
   const [filter, setFilter] = useState<Kind | 'all'>('all')
-  const visible = companies.filter(c => filter === 'all' || c.kind === filter)
+  const [showEarly, setShowEarly] = useState(false)
+  const matching = companies.filter(c => filter === 'all' || c.kind === filter)
+  const visible = matching.filter(c => showEarly || !c.early)
+  const hiddenCount = matching.length - visible.length
 
   return (
     <section id="experience" className="experience">
@@ -233,6 +344,14 @@ const Experience = () => {
             </li>
           ))}
         </ol>
+
+        {(hiddenCount > 0 || showEarly) && matching.some(c => c.early) && (
+          <div className="xp-more">
+            <button className="xp-filter" onClick={() => setShowEarly(v => !v)}>
+              {showEarly ? 'Hide earlier roles' : 'Show earlier roles (2015–2019)'}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   )

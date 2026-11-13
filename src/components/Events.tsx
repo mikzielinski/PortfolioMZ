@@ -152,11 +152,11 @@ const Events = () => {
     },
     {
       id: 'kozminski-university',
-      title: 'Kozminski University - RPA & Automation Lecturer',
-      date: '2024-2025',
-      dateSort: '2024-09-01',
+      title: 'Kozminski University - Automation Architecture & Integrations',
+      date: 'Oct 2025 – Present',
+      dateSort: '2025-10-01',
       location: 'Kozminski University, Warsaw, Poland',
-      description: 'Lecturer at Kozminski University teaching RPA, automation, and intelligent process automation. Educating students on cutting-edge automation technologies and business transformation through automation.',
+      description: 'Technology-agnostic courses on automation architecture, system integrations, APIs, governance and quality assurance in enterprise digital transformation. Hands-on workshops, real business scenarios and mentoring of student projects.',
       type: 'workshop',
       roles: ['lecturer'],
       photos: []

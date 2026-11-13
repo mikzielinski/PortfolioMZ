@@ -9,7 +9,8 @@ const Skills = () => {
       skills: [
         'Scalable & resilient design',
         'Integration strategy and API-based systems',
-        'Custom platforms built from scratch'
+        'Custom platforms built from scratch',
+        'Microsoft Azure & On-Prem → SaaS migrations'
       ]
     },
     {
@@ -18,7 +19,8 @@ const Skills = () => {
       skills: [
         'RPA with UiPath (primary stack)',
         'Agentic automation & AI-assisted workflows',
-        'Orchestration and exception-heavy flows'
+        'Orchestration and exception-heavy flows',
+        'Intelligent Document Processing (AI OCR)'
       ]
     },
     {
