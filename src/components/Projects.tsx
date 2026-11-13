@@ -90,7 +90,7 @@ const Projects = ({ repos, loading }: ProjectsProps) => {
       <div className="container">
         <h2 className="section-title" data-eyebrow="04 · Projects">Things I've built</h2>
         <p className="section-subtitle">
-          A few things I've built — from process simulation to IoT and dev tooling
+          A few things I've built — from agentic automation and AI agents to simulators and dev tooling
         </p>
         <div className="projects-grid">
           {repos.map((repo) => {
