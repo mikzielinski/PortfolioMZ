@@ -10,22 +10,38 @@ const About = () => {
       <div className="container">
         <div className="about-content">
           <h2 className="section-title">About Me</h2>
-          
+
+          {/* Bio */}
+          <div className="about-section">
+            <div className="about-section-inner">
+              <h3 className="about-section-title">Who I Am</h3>
+              <div className="about-content-text">
+                <p>
+                  I'm an Automation Solution Architect at Xelto Digital, three-time UiPath MVP (2024, 2025 &amp; 2026)
+                  and lecturer at Kozminski University. I design automation that holds up in production — RPA,
+                  AI agents and the integrations that tie them into ERP and enterprise systems.
+                </p>
+                <p>
+                  I've worked in automation since 2019, and I've come up through every layer of it: operating robots
+                  at MAHLE, building and running them at Olympus, owning the enterprise UiPath platform at Bayer, and
+                  leading UiPath delivery at Proservartner. That path is why I design for the people who will run,
+                  support and audit a solution — not just for the demo.
+                </p>
+              </div>
+            </div>
+          </div>
+
           {/* What I Do Section */}
           <div className="about-section">
             <div className="about-section-inner">
               <h3 className="about-section-title">What I Do</h3>
-              <div className="about-content-text">
-                <p>
-                  I help teams design and stabilize complex systems — where reliability matters, assumptions fail, and real-world constraints expose hidden risks. I focus on end-to-end architecture, automation platforms, and long-running integrations that must remain predictable over time.
-                </p>
-              </div>
               <div className="about-content-list">
                 <ul>
-                  <li>Design and review system architectures with a focus on reliability and long-term stability</li>
-                  <li>Build and integrate automation platforms using UiPath and custom software components</li>
-                  <li>Analyze system failures, edge cases, and hidden assumptions</li>
-                  <li>Help teams understand and fix problems that only appear at scale</li>
+                  <li>Design end-to-end automation architectures — from process assessment to delivery and hypercare</li>
+                  <li>Build agentic automation where AI agents, RPA robots and people share one process</li>
+                  <li>Integrate automation with ERP and enterprise systems through APIs, SQL and cloud services</li>
+                  <li>Create custom tools that make automation teams faster and more consistent, incl. AI coding agents</li>
+                  <li>Set up platforms, standards and governance — On-Prem → SaaS migrations, GxP, EU AI Act readiness</li>
                 </ul>
               </div>
             </div>
@@ -33,7 +49,7 @@ const About = () => {
 
           {/* How I Work Section */}
           <div className="about-section collapsible">
-            <button 
+            <button
               className="about-section-header"
               onClick={() => setBioExpanded(!bioExpanded)}
               aria-expanded={bioExpanded}
@@ -43,7 +59,7 @@ const About = () => {
                 {bioExpanded ? <FaChevronUp /> : <FaChevronDown />}
               </div>
             </button>
-            <div 
+            <div
               className={`about-section-content ${bioExpanded ? 'expanded' : 'collapsed'}`}
               onClick={!bioExpanded ? () => setBioExpanded(true) : undefined}
               style={{ cursor: !bioExpanded ? 'pointer' : 'default' }}
@@ -51,17 +67,27 @@ const About = () => {
               {!bioExpanded && (
                 <div className="about-summary">
                   <p>
-                    I focus on understanding systems beyond their happy paths, analyzing how they behave under stress and how small design decisions compound into operational risks.
+                    I look past the happy path: how a system behaves under load, with bad data, or when an AI agent is
+                    confidently wrong.
                   </p>
                   <span className="read-more-hint">Click to read more ↓</span>
                 </div>
               )}
               <div className="about-full-content">
                 <p>
-                  I focus on understanding systems beyond their happy paths. My work often involves analyzing how systems behave under stress, how assumptions break over time, and how small design decisions compound into large operational risks.
+                  I look past the happy path. Most automation failures I've seen didn't come from the main flow — they came
+                  from edge cases, silent data problems, overflowing numbers and assumptions nobody wrote down. With AI agents
+                  in the loop, that matters even more: a model can be confidently wrong, so every agent needs clear
+                  boundaries, validation and a way to hand off to a human.
                 </p>
                 <p>
-                  I prefer simple, observable, and explainable systems over clever but fragile designs. I value thoughtful design, clear reasoning, and pragmatic engineering over complexity for its own sake.
+                  I prefer simple, observable and explainable systems over clever but fragile ones. I write standards and
+                  documentation people actually use, pick the tool that fits the process rather than the one in fashion, and
+                  treat governance as part of the design, not paperwork at the end.
+                </p>
+                <p>
+                  Before automation I trained as a scientist — I did genetics research at the Hirszfeld Institute of the
+                  Polish Academy of Sciences. The habit stuck: form a hypothesis, test it, and trust data over opinions.
                 </p>
               </div>
             </div>
@@ -73,25 +99,14 @@ const About = () => {
               <h3 className="about-section-title">Core Expertise</h3>
               <div className="about-content-list">
                 <ul>
-                  <li>System and software architecture</li>
-                  <li>Automation and orchestration (UiPath, agent-based systems)</li>
-                  <li>Integration design and API-based systems</li>
-                  <li>Reliability engineering and failure analysis</li>
-                  <li>Data integrity, precision, and boundary conditions</li>
-                  <li>Long-running and mission-critical systems</li>
+                  <li>Automation solution architecture (UiPath, n8n, Power Platform)</li>
+                  <li>Agentic automation and AI agent design with human-in-the-loop</li>
+                  <li>Intelligent Document Processing and AI OCR</li>
+                  <li>System integrations — REST, SOAP, SQL, ERP (JD Edwards, NetSuite, SAP)</li>
+                  <li>Microsoft Azure and UiPath Automation Cloud, On-Prem → SaaS migrations</li>
+                  <li>Governance, QA and compliance — PDD/SDD standards, GxP, EU AI Act, ISO/IEC 42001</li>
+                  <li>Reliability and failure analysis for long-running automations</li>
                 </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* What I Work On Section */}
-          <div className="about-section">
-            <div className="about-section-inner">
-              <h3 className="about-section-title">What I Work On</h3>
-              <div className="about-content-text">
-                <p>
-                  I work on systems where correctness matters: automation platforms, enterprise integrations, and long-running processes where small errors can have outsized impact.
-                </p>
               </div>
             </div>
           </div>
@@ -104,49 +119,43 @@ const About = () => {
               <div className="about-item">
                 <h4>UiPath MVP 2024, 2025 & 2026</h4>
                 <p>
-                  Recognized as a Most Valuable Professional by UiPath for three consecutive years 
-                  (2024, 2025 & 2026) for outstanding contributions to the automation community, 
-                  expertise in RPA technologies, and active engagement on the UiPath Community Forum.
-                </p>
-              </div>
-              <div className="about-item">
-                <h4>Conference Speaker & Organizer</h4>
-                <p>
-                  Active conference speaker sharing insights on RPA, AI, and automation best practices. 
-                  Organizer of community meetings and events that bring together automation professionals 
-                  to exchange knowledge and experiences.
-                </p>
-              </div>
-              <div className="about-item">
-                <h4>Lecturer & Educator</h4>
-                <p>
-                  Passionate educator delivering lectures on automation, AI, and business transformation. 
-                  Committed to knowledge sharing and mentoring the next generation of automation professionals 
-                  through practical insights and real-world experiences.
-                </p>
-              </div>
-              <div className="about-item">
-                <h4>UiPath Community Lead for Poland</h4>
-                <p>
-                  Fostering the growth of the RPA community in Poland through knowledge sharing, 
-                  mentoring, organizing events, and active participation on the UiPath Community Forum. 
-                  Building connections and driving innovation in the automation space.
+                  Recognized by UiPath as a Most Valuable Professional three years in a row for contributions to
+                  the automation community, technical expertise and activity on the UiPath Community Forum.
                 </p>
               </div>
               <div className="about-item">
                 <h4>Automation Solution Architect at Xelto Digital</h4>
                 <p>
-                  Designing intelligent automation solutions (RPA &amp; AI agents), building custom applications 
-                  that improve the automation development lifecycle, and developing Task2Mask (formerly AiRelay). 
-                  Previously UiPath Lead at Proservartner.
+                  Designing intelligent automation and AI agent solutions for enterprise clients, building custom
+                  tools for automation teams and developing Task2Mask (formerly AiRelay).
                 </p>
               </div>
               <div className="about-item">
-                <h4>Business Transformation Specialist</h4>
+                <h4>UiPath Community Lead for Poland</h4>
                 <p>
-                  Combining technical expertise with strategic business acumen to identify opportunities 
-                  for process optimization and digital transformation. Transforming businesses with 
-                  cutting-edge technology and strategic insights.
+                  Organizing UiPath Community Days, meetups and virtual sessions across Poland, and mentoring
+                  participants in the Agent Pageant agentic automation hackathon.
+                </p>
+              </div>
+              <div className="about-item">
+                <h4>Conference Speaker</h4>
+                <p>
+                  Speaking at UiPath Community Days and Devs4Devs events on agentic automation pitfalls, structuring
+                  automation programs and real-world AI use cases.
+                </p>
+              </div>
+              <div className="about-item">
+                <h4>Lecturer at Kozminski University</h4>
+                <p>
+                  Teaching automation architecture, system integrations, APIs, governance and QA. Previously lectured
+                  on business process automation and RPA development at SGH Warsaw School of Economics.
+                </p>
+              </div>
+              <div className="about-item">
+                <h4>Enterprise Platform Ownership</h4>
+                <p>
+                  Former UiPath System Owner at Bayer — ran the enterprise platform, validated GxP process
+                  documentation and led the migration to UiPath Automation Cloud.
                 </p>
               </div>
             </div>

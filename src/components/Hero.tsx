@@ -36,10 +36,10 @@ const Hero = () => {
             Automation Solution Architect @ Xelto Digital | UiPath MVP | Speaker & Lecturer
           </p>
           <p className="hero-intro">
-            I help organizations build reliable software and automation systems that scale — from architecture to execution.
+            I design automation that holds up in production — RPA, AI agents and the integrations behind them.
           </p>
           <p className="hero-description">
-            Leading digital transformation through intelligent automation, system architecture, and process optimization.
+            7 years in enterprise automation · Bayer, Olympus, MAHLE, Proservartner · now at Xelto Digital
           </p>
           <div className="hero-buttons">
             <button 

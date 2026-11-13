@@ -13,7 +13,7 @@ const Activities = () => {
     {
       icon: <FaCertificate />,
       title: 'UiPath MVP 2024 · 2025 · 2026',
-      description: 'Recognized as Most Valuable Professional for three consecutive years for outstanding contributions to the UiPath community.',
+      description: 'Recognized as Most Valuable Professional for three consecutive years (2024–2026) for outstanding contributions to the UiPath community.',
       link: 'https://forum.uipath.com/u/mikolaj_zielinski/activity'
     },
     {
@@ -29,7 +29,7 @@ const Activities = () => {
     {
       icon: <FaChalkboardTeacher />,
       title: 'Lecturer & Educator',
-      description: 'Teaching Business Process Automation and RPA Development at SGH (Warsaw School of Economics) and Kozminski University. Audiences up to 200+ students per term. Courses focus on practical automation engineering, real-world use cases, and hands-on implementation.',
+      description: 'Lecturer at Kozminski University (since 2025), teaching automation architecture, system integrations, APIs, governance and QA. Previously taught Business Process Automation and RPA Development at SGH Warsaw School of Economics. Audiences of up to 200+ students per term.',
     },
     {
       icon: <FaHandsHelping />,
