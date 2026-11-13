@@ -105,17 +105,6 @@ const Events = () => {
       photos: []
     },
     {
-      id: 'xelto-netsuite-webinar-2026',
-      title: 'XELTO Webinar: AI in NetSuite Without Empty Promises',
-      date: 'July 2026',
-      dateSort: '2026-07-01',
-      location: 'Online',
-      description: 'Speaker at the XELTO webinar on practical AI deployments with Oracle NetSuite. My part: how to start the AI journey in a company — rolling AI out without burning the budget, protecting data when AI agents are involved, and optimizing business process costs.',
-      type: 'webinar',
-      roles: ['speaker'],
-      photos: []
-    },
-    {
       id: 'mvp-summit-madrid-2026',
       title: 'UiPath MVP Summit 2026 - Madrid',
       date: 'June 24, 2026',
