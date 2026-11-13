@@ -45,11 +45,15 @@ const companies: Company[] = [
         period: 'May 2026 – Present',
         current: true,
         highlights: [
-          'Designing end-to-end intelligent automation solutions (RPA & AI agents) for enterprise clients',
-          'Building custom applications that speed up and standardize the automation development lifecycle',
+          'Designing end-to-end intelligent automation solutions — from process assessment and solution design to delivery and hypercare',
+          'Architecting agentic automation: AI agents for order intake and claims handling that work alongside RPA robots and hand off to humans where needed',
+          'Combining UiPath and n8n in one automation landscape — choosing the right tool per process and keeping orchestration observable',
+          'Automating finance, supply chain and HR processes integrated with ERP systems (incl. JD Edwards and NetSuite)',
+          'Building custom applications that speed up and standardize the automation development lifecycle, incl. AI coding agents in the dev workflow',
           'Developing Task2Mask (formerly AiRelay)', // TODO: one-line product description
+          'Shaping governance for AI in automation in line with the EU AI Act and ISO/IEC 42001',
         ],
-        tags: ['Solution Architecture', 'UiPath', 'AI Agents', 'Custom Apps'],
+        tags: ['Solution Architecture', 'Agentic Automation', 'UiPath', 'n8n', 'ERP Integrations', 'AI Governance'],
       },
     ],
   },
